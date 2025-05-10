@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\",
+  "WorkspaceRootPath": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|f:\\cse\\software engineering\\project\\auto clean system\\managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|c:\\users\\i777s\\source\\repos\\auto-clean-system\\auto clean system\\managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -26,28 +26,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "managerDashboard.cs",
-              "DocumentMoniker": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.cs",
               "RelativeDocumentMoniker": "managerDashboard.cs",
-              "ToolTip": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerDashboard.cs",
+              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.cs",
               "RelativeToolTip": "managerDashboard.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAwwC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T17:19:28.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "managerDashboard.cs [Design]",
-              "DocumentMoniker": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.cs",
               "RelativeDocumentMoniker": "managerDashboard.cs",
-              "ToolTip": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerDashboard.cs [Design]",
+              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.cs [Design]",
               "RelativeToolTip": "managerDashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T21:36:59.018Z",
@@ -57,9 +65,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "managerLogin.cs",
-              "DocumentMoniker": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerLogin.cs",
+              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerLogin.cs",
               "RelativeDocumentMoniker": "managerLogin.cs",
-              "ToolTip": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerLogin.cs",
+              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerLogin.cs",
               "RelativeToolTip": "managerLogin.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAwwB4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -69,12 +77,29 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "managerLogin.cs [Design]",
-              "DocumentMoniker": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerLogin.cs",
+              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerLogin.cs",
               "RelativeDocumentMoniker": "managerLogin.cs",
               "ToolTip": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerLogin.cs [Design]",
-              "RelativeToolTip": "managerLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T19:23:17.081Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 503,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             }
           ]
         }

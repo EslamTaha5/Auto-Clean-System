@@ -10,3 +10,15 @@ F:\CSE\Software Engineering\Project\Auto Clean System\obj\Debug\Auto Clean Syste
 F:\CSE\Software Engineering\Project\Auto Clean System\obj\Debug\Auto Clean System.pdb
 F:\CSE\Software Engineering\Project\Auto Clean System\obj\Debug\Auto_Clean_System.managerLogin.resources
 F:\CSE\Software Engineering\Project\Auto Clean System\obj\Debug\Auto_Clean_System.managerDashboard.resources
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\bin\Debug\Auto Clean System.exe.config
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\bin\Debug\Auto Clean System.exe
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\bin\Debug\Auto Clean System.pdb
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto Clean System.csproj.AssemblyReference.cache
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto_Clean_System.managerDashboard.resources
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto_Clean_System.managerLogin.resources
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto_Clean_System.RoleSelection.resources
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto_Clean_System.Properties.Resources.resources
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto Clean System.csproj.GenerateResource.cache
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto Clean System.csproj.CoreCompileInputs.cache
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto Clean System.exe
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto Clean System.pdb

@@ -25,9 +25,16 @@ namespace Auto_Clean_System
             this.Hide();
         }
 
+        private bool CheckManager() {
+
+
+            return true;
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            CheckManager();
             managerDashboard Manager = new managerDashboard();
+
             Manager.Show();
             this.Hide();
         }

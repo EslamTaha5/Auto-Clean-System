@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|f:\\cse\\software engineering\\project\\auto clean system\\managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -63,8 +63,7 @@
               "RelativeToolTip": "managerLogin.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAwwB4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T10:30:22.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T10:30:22.585Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "ToolTip": "F:\\CSE\\Software Engineering\\Project\\Auto Clean System\\managerLogin.cs [Design]",
               "RelativeToolTip": "managerLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T19:23:17.081Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-07T19:23:17.081Z"
             }
           ]
         }

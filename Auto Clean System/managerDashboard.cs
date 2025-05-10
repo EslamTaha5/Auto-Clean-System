@@ -19,7 +19,6 @@ namespace Auto_Clean_System
 
         private void tabControl_DrawItem(object sender, DrawItemEventArgs e)
         {
-            tabControl.DrawItem += new DrawItemEventHandler(tabControl_DrawItem);
             TabPage tabPage = tabControl.TabPages[e.Index];
             Rectangle tabBounds = tabControl.GetTabRect(e.Index);
 
