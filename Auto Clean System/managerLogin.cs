@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Auto_Clean_System.AutoCleanDatabaseDataSet;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters;
 
 namespace Auto_Clean_System
 {
@@ -41,7 +42,7 @@ namespace Auto_Clean_System
                 int manager = 1;
                 Console.WriteLine($"{username} {pass}");
                 // Execute the scalar query to get the average salary
-                object result = Program.StaffAdapter.FindStaff(username, pass, manager);
+                object result = this.staffTableAdapter.FindStaff(username, pass, manager);
 
                 // findUser returns integer the number of users found with these credentials
                 if (result != null && result != DBNull.Value) {
@@ -92,5 +93,17 @@ namespace Auto_Clean_System
             this.Hide();
         }
 
+        private void staffBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
+            this.Validate();
+            this.staffBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.autoCleanDatabaseDataSet);
+
+        }
+
+        private void managerLogin_Load(object sender, EventArgs e) {
+            // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.Staff' table. You can move, or remove it, as needed.
+            this.staffTableAdapter.Fill(this.autoCleanDatabaseDataSet.Staff);
+
+        }
     }
 }

@@ -23,5 +23,11 @@ namespace Auto_Clean_System
             ManagerLogin.Show();
             this.Hide();
         }
+
+        private void btnEmployee_Click(object sender, EventArgs e) {
+            EmployeeLogin employeeLogin = new EmployeeLogin();
+            employeeLogin.Show();
+            this.Hide();
+        }
     }
 }

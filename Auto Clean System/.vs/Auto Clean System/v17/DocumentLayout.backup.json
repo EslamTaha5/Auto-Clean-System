@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|c:\\users\\i777s\\source\\repos\\auto-clean-system\\auto clean system\\employee dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:employee dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\autocleandatabasedataset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:autocleandatabasedataset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|c:\\users\\i777s\\source\\repos\\auto-clean-system\\auto clean system\\employeelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:employeelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|c:\\users\\i777s\\source\\repos\\auto-clean-system\\auto clean system\\employee dashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:employee dashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|c:\\users\\i777s\\source\\repos\\auto-clean-system\\auto clean system\\managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|c:\\users\\i777s\\source\\repos\\auto-clean-system\\auto clean system\\employee dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:employee dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|solutionrelative:managerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}|Auto Clean System.csproj|C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\autocleandatabasedataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
@@ -30,69 +34,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "managerDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.cs",
-              "RelativeDocumentMoniker": "managerDashboard.cs",
-              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.cs [Design]*",
-              "RelativeToolTip": "managerDashboard.cs [Design]*",
+              "DocumentIndex": 1,
+              "Title": "EmployeeLogin.cs",
+              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\EmployeeLogin.cs",
+              "RelativeDocumentMoniker": "EmployeeLogin.cs",
+              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\EmployeeLogin.cs*",
+              "RelativeToolTip": "EmployeeLogin.cs*",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAD0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T05:45:07.113Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-11T11:58:19.021Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AutoCleanDatabaseDataSet.cs",
-              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\AutoCleanDatabaseDataSet.cs",
-              "RelativeDocumentMoniker": "AutoCleanDatabaseDataSet.cs",
-              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\AutoCleanDatabaseDataSet.cs",
-              "RelativeToolTip": "AutoCleanDatabaseDataSet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Employee Dashboard.cs",
+              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\Employee Dashboard.cs",
+              "RelativeDocumentMoniker": "Employee Dashboard.cs",
+              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\Employee Dashboard.cs*",
+              "RelativeToolTip": "Employee Dashboard.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T04:59:55.279Z",
+              "WhenOpened": "2025-05-11T11:57:34.621Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "managerDashboard.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.Designer.cs",
-              "RelativeDocumentMoniker": "managerDashboard.Designer.cs",
-              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.Designer.cs*",
-              "RelativeToolTip": "managerDashboard.Designer.cs*",
-              "ViewState": "AgIAAFMHAAAAAAAAAAAAADEHAAAAAAAAAAAAAA==",
+              "Title": "Employee Dashboard.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\i777s\\Source\\Repos\\Auto-Clean-System\\Auto Clean System\\Employee Dashboard.Designer.cs",
+              "RelativeDocumentMoniker": "Employee Dashboard.Designer.cs",
+              "ToolTip": "C:\\Users\\i777s\\Source\\Repos\\Auto-Clean-System\\Auto Clean System\\Employee Dashboard.Designer.cs",
+              "RelativeToolTip": "Employee Dashboard.Designer.cs",
+              "ViewState": "AgIAAHgCAAAAAAAAAAAUwP4CAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T03:15:02.463Z",
+              "WhenOpened": "2025-05-11T11:56:34.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "managerDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.cs",
-              "RelativeDocumentMoniker": "managerDashboard.cs",
-              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerDashboard.cs*",
-              "RelativeToolTip": "managerDashboard.cs*",
-              "ViewState": "AgIAANwAAAAAAAAAAAAUwOkAAAA1AAAAAAAAAA==",
+              "Title": "Employee Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\Employee Dashboard.cs",
+              "RelativeDocumentMoniker": "Employee Dashboard.cs",
+              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\Employee Dashboard.cs [Design]*",
+              "RelativeToolTip": "Employee Dashboard.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T03:13:04.871Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T11:56:10.354Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "managerLogin.cs",
+              "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerLogin.cs",
+              "RelativeDocumentMoniker": "managerLogin.cs",
+              "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\managerLogin.cs",
+              "RelativeToolTip": "managerLogin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T11:24:47.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AutoCleanDatabaseDataSet.xsd",
               "DocumentMoniker": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\AutoCleanDatabaseDataSet.xsd",
               "RelativeDocumentMoniker": "AutoCleanDatabaseDataSet.xsd",
               "ToolTip": "C:\\Users\\i777s\\source\\repos\\Auto-Clean-System\\Auto Clean System\\AutoCleanDatabaseDataSet.xsd",
               "RelativeToolTip": "AutoCleanDatabaseDataSet.xsd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-05-11T02:47:27.873Z"
+              "WhenOpened": "2025-05-11T02:47:27.873Z",
+              "EditorCaption": ""
             }
           ]
         },

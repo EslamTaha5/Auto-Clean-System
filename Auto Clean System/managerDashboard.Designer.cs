@@ -72,35 +72,35 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabCustomers = new System.Windows.Forms.TabPage();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.customerName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.customerId = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.customerCar = new System.Windows.Forms.TextBox();
+            this.customerPhone = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
-            this.btnCreateCustomer = new System.Windows.Forms.Button();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.customerDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerIdRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerNameRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerPhoneRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerCarRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.customerName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.customerId = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.carTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabCustomerService = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.dateCustomerService = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.txtCost = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.combServiceName = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -182,6 +182,21 @@
             this.ordersTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.OrdersTableAdapter();
             this.tableAdapterManager = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.TableAdapterManager();
             this.customerTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.CustomerTableAdapter();
+            this.addOrderBtn = new System.Windows.Forms.Button();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.txtCar = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCost = new System.Windows.Forms.TextBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.totalPriceLabel = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -203,17 +218,18 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCustomers.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabCustomerService.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -243,6 +259,10 @@
             this.panel36.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKOrderStaffBindingSource)).BeginInit();
+            this.panel35.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel37.SuspendLayout();
+            this.panel40.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -729,12 +749,9 @@
             // tabCustomers
             // 
             this.tabCustomers.AutoScroll = true;
-            this.tabCustomers.Controls.Add(this.panel10);
             this.tabCustomers.Controls.Add(this.btnDeleteCustomer);
-            this.tabCustomers.Controls.Add(this.panel11);
             this.tabCustomers.Controls.Add(this.panel13);
             this.tabCustomers.Controls.Add(this.btnUpdateCustomer);
-            this.tabCustomers.Controls.Add(this.btnCreateCustomer);
             this.tabCustomers.Controls.Add(this.btnSearchCustomer);
             this.tabCustomers.Controls.Add(this.panel8);
             this.tabCustomers.Controls.Add(this.panel9);
@@ -747,11 +764,149 @@
             this.tabCustomers.Text = "Customers";
             this.tabCustomers.UseVisualStyleBackColor = true;
             // 
+            // btnDeleteCustomer
+            // 
+            this.btnDeleteCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDeleteCustomer.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(625, 390);
+            this.btnDeleteCustomer.MaximumSize = new System.Drawing.Size(120, 40);
+            this.btnDeleteCustomer.MinimumSize = new System.Drawing.Size(120, 40);
+            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(120, 40);
+            this.btnDeleteCustomer.TabIndex = 41;
+            this.btnDeleteCustomer.Text = "Delete";
+            this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.customerPhone);
+            this.panel13.Controls.Add(this.label9);
+            this.panel13.Location = new System.Drawing.Point(34, 234);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(300, 50);
+            this.panel13.TabIndex = 13;
+            // 
+            // customerPhone
+            // 
+            this.customerPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customerPhone.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerPhone.Location = new System.Drawing.Point(88, 12);
+            this.customerPhone.Name = "customerPhone";
+            this.customerPhone.Size = new System.Drawing.Size(202, 20);
+            this.customerPhone.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(33, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 16);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Phone:";
+            // 
+            // btnUpdateCustomer
+            // 
+            this.btnUpdateCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.btnUpdateCustomer.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(439, 390);
+            this.btnUpdateCustomer.MaximumSize = new System.Drawing.Size(120, 40);
+            this.btnUpdateCustomer.MinimumSize = new System.Drawing.Size(120, 40);
+            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(120, 40);
+            this.btnUpdateCustomer.TabIndex = 40;
+            this.btnUpdateCustomer.Text = "Update";
+            this.btnUpdateCustomer.UseVisualStyleBackColor = false;
+            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
+            // 
+            // btnSearchCustomer
+            // 
+            this.btnSearchCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.btnSearchCustomer.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSearchCustomer.Location = new System.Drawing.Point(246, 390);
+            this.btnSearchCustomer.MaximumSize = new System.Drawing.Size(120, 40);
+            this.btnSearchCustomer.MinimumSize = new System.Drawing.Size(120, 40);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(120, 40);
+            this.btnSearchCustomer.TabIndex = 38;
+            this.btnSearchCustomer.Text = "Search";
+            this.btnSearchCustomer.UseVisualStyleBackColor = false;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.customerDataGridView);
+            this.panel8.Location = new System.Drawing.Point(414, 83);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(432, 280);
+            this.panel8.TabIndex = 37;
+            // 
+            // customerDataGridView
+            // 
+            this.customerDataGridView.AutoGenerateColumns = false;
+            this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customerIdRow,
+            this.CustomerNameRow,
+            this.customerPhoneRow,
+            this.customerCarRow});
+            this.customerDataGridView.DataSource = this.customerBindingSource;
+            this.customerDataGridView.Location = new System.Drawing.Point(2, 0);
+            this.customerDataGridView.Name = "customerDataGridView";
+            this.customerDataGridView.Size = new System.Drawing.Size(427, 280);
+            this.customerDataGridView.TabIndex = 0;
+            this.customerDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGridView_CellContentClick);
+            // 
+            // customerIdRow
+            // 
+            this.customerIdRow.DataPropertyName = "CustomerID";
+            this.customerIdRow.HeaderText = "CustomerID";
+            this.customerIdRow.Name = "customerIdRow";
+            this.customerIdRow.ReadOnly = true;
+            // 
+            // CustomerNameRow
+            // 
+            this.CustomerNameRow.DataPropertyName = "Name";
+            this.CustomerNameRow.HeaderText = "Name";
+            this.CustomerNameRow.Name = "CustomerNameRow";
+            // 
+            // customerPhoneRow
+            // 
+            this.customerPhoneRow.DataPropertyName = "PhoneNumber";
+            this.customerPhoneRow.HeaderText = "PhoneNumber";
+            this.customerPhoneRow.Name = "customerPhoneRow";
+            // 
+            // customerCarRow
+            // 
+            this.customerCarRow.DataPropertyName = "Car";
+            this.customerCarRow.HeaderText = "Car";
+            this.customerCarRow.Name = "customerCarRow";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.autoCleanDatabaseDataSet;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.panel11);
+            this.panel9.Controls.Add(this.panel12);
+            this.panel9.Location = new System.Drawing.Point(34, 83);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(310, 280);
+            this.panel9.TabIndex = 36;
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.customerName);
             this.panel10.Controls.Add(this.label6);
-            this.panel10.Location = new System.Drawing.Point(34, 118);
+            this.panel10.Location = new System.Drawing.Point(0, 3);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(300, 50);
             this.panel10.TabIndex = 14;
@@ -777,25 +932,11 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Name:";
             // 
-            // btnDeleteCustomer
-            // 
-            this.btnDeleteCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDeleteCustomer.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(625, 390);
-            this.btnDeleteCustomer.MaximumSize = new System.Drawing.Size(120, 40);
-            this.btnDeleteCustomer.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(120, 40);
-            this.btnDeleteCustomer.TabIndex = 41;
-            this.btnDeleteCustomer.Text = "Delete";
-            this.btnDeleteCustomer.UseVisualStyleBackColor = false;
-            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.customerId);
             this.panel11.Controls.Add(this.label7);
-            this.panel11.Location = new System.Drawing.Point(34, 195);
+            this.panel11.Location = new System.Drawing.Point(0, 77);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(300, 50);
             this.panel11.TabIndex = 14;
@@ -821,132 +962,35 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "ID:";
             // 
-            // panel13
+            // panel12
             // 
-            this.panel13.Controls.Add(this.customerCar);
-            this.panel13.Controls.Add(this.label9);
-            this.panel13.Location = new System.Drawing.Point(34, 274);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(300, 50);
-            this.panel13.TabIndex = 13;
+            this.panel12.Controls.Add(this.carTextBox);
+            this.panel12.Controls.Add(this.label8);
+            this.panel12.Location = new System.Drawing.Point(0, 227);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(300, 50);
+            this.panel12.TabIndex = 14;
             // 
-            // customerCar
+            // carTextBox
             // 
-            this.customerCar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.carTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customerCar.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerCar.Location = new System.Drawing.Point(88, 12);
-            this.customerCar.Name = "customerCar";
-            this.customerCar.Size = new System.Drawing.Size(202, 20);
-            this.customerCar.TabIndex = 8;
+            this.carTextBox.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carTextBox.Location = new System.Drawing.Point(88, 12);
+            this.carTextBox.Name = "carTextBox";
+            this.carTextBox.Size = new System.Drawing.Size(202, 20);
+            this.carTextBox.TabIndex = 8;
             // 
-            // label9
+            // label8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(46, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 16);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Car:";
-            // 
-            // btnUpdateCustomer
-            // 
-            this.btnUpdateCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
-            this.btnUpdateCustomer.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(461, 390);
-            this.btnUpdateCustomer.MaximumSize = new System.Drawing.Size(120, 40);
-            this.btnUpdateCustomer.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
-            this.btnUpdateCustomer.Size = new System.Drawing.Size(120, 40);
-            this.btnUpdateCustomer.TabIndex = 40;
-            this.btnUpdateCustomer.Text = "Update";
-            this.btnUpdateCustomer.UseVisualStyleBackColor = false;
-            // 
-            // btnCreateCustomer
-            // 
-            this.btnCreateCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
-            this.btnCreateCustomer.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCreateCustomer.Location = new System.Drawing.Point(297, 390);
-            this.btnCreateCustomer.MaximumSize = new System.Drawing.Size(120, 40);
-            this.btnCreateCustomer.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnCreateCustomer.Name = "btnCreateCustomer";
-            this.btnCreateCustomer.Size = new System.Drawing.Size(120, 40);
-            this.btnCreateCustomer.TabIndex = 39;
-            this.btnCreateCustomer.Text = "Create";
-            this.btnCreateCustomer.UseVisualStyleBackColor = false;
-            this.btnCreateCustomer.Click += new System.EventHandler(this.btnCreateCustomer_Click);
-            // 
-            // btnSearchCustomer
-            // 
-            this.btnSearchCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
-            this.btnSearchCustomer.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSearchCustomer.Location = new System.Drawing.Point(133, 390);
-            this.btnSearchCustomer.MaximumSize = new System.Drawing.Size(120, 40);
-            this.btnSearchCustomer.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnSearchCustomer.Name = "btnSearchCustomer";
-            this.btnSearchCustomer.Size = new System.Drawing.Size(120, 40);
-            this.btnSearchCustomer.TabIndex = 38;
-            this.btnSearchCustomer.Text = "Search";
-            this.btnSearchCustomer.UseVisualStyleBackColor = false;
-            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.customerDataGridView);
-            this.panel8.Location = new System.Drawing.Point(414, 83);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(432, 280);
-            this.panel8.TabIndex = 37;
-            // 
-            // customerDataGridView
-            // 
-            this.customerDataGridView.AutoGenerateColumns = false;
-            this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.customerDataGridView.DataSource = this.customerBindingSource;
-            this.customerDataGridView.Location = new System.Drawing.Point(2, 0);
-            this.customerDataGridView.Name = "customerDataGridView";
-            this.customerDataGridView.Size = new System.Drawing.Size(427, 280);
-            this.customerDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CustomerID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "CustomerID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PhoneNumber";
-            this.dataGridViewTextBoxColumn3.HeaderText = "PhoneNumber";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.autoCleanDatabaseDataSet;
-            // 
-            // panel9
-            // 
-            this.panel9.Location = new System.Drawing.Point(34, 83);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(310, 280);
-            this.panel9.TabIndex = 36;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(33, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 16);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Car:";
             // 
             // pictureBox2
             // 
@@ -961,6 +1005,9 @@
             // 
             // tabCustomerService
             // 
+            this.tabCustomerService.Controls.Add(this.totalPriceLabel);
+            this.tabCustomerService.Controls.Add(this.label30);
+            this.tabCustomerService.Controls.Add(this.addOrderBtn);
             this.tabCustomerService.Controls.Add(this.panel14);
             this.tabCustomerService.Controls.Add(this.pictureBox3);
             this.tabCustomerService.Location = new System.Drawing.Point(4, 34);
@@ -973,21 +1020,24 @@
             // 
             // panel14
             // 
+            this.panel14.Controls.Add(this.panel40);
+            this.panel14.Controls.Add(this.panel37);
+            this.panel14.Controls.Add(this.panel35);
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Controls.Add(this.panel16);
             this.panel14.Controls.Add(this.panel17);
             this.panel14.Controls.Add(this.panel18);
             this.panel14.Controls.Add(this.panel19);
-            this.panel14.Location = new System.Drawing.Point(266, 116);
+            this.panel14.Location = new System.Drawing.Point(269, 6);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(360, 280);
+            this.panel14.Size = new System.Drawing.Size(360, 454);
             this.panel14.TabIndex = 32;
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.dateCustomerService);
             this.panel15.Controls.Add(this.label10);
-            this.panel15.Location = new System.Drawing.Point(3, 227);
+            this.panel15.Location = new System.Drawing.Point(3, 395);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(350, 50);
             this.panel15.TabIndex = 16;
@@ -1008,36 +1058,6 @@
             this.label10.Size = new System.Drawing.Size(40, 16);
             this.label10.TabIndex = 7;
             this.label10.Text = "Date:";
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.txtCost);
-            this.panel16.Controls.Add(this.label11);
-            this.panel16.Location = new System.Drawing.Point(3, 171);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(350, 50);
-            this.panel16.TabIndex = 16;
-            // 
-            // txtCost
-            // 
-            this.txtCost.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCost.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCost.Location = new System.Drawing.Point(116, 12);
-            this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(231, 20);
-            this.txtCost.TabIndex = 8;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(72, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 16);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Cost:";
             // 
             // panel17
             // 
@@ -1837,6 +1857,159 @@
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
+            // addOrderBtn
+            // 
+            this.addOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.addOrderBtn.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addOrderBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.addOrderBtn.Location = new System.Drawing.Point(509, 469);
+            this.addOrderBtn.MaximumSize = new System.Drawing.Size(120, 40);
+            this.addOrderBtn.MinimumSize = new System.Drawing.Size(120, 40);
+            this.addOrderBtn.Name = "addOrderBtn";
+            this.addOrderBtn.Size = new System.Drawing.Size(120, 40);
+            this.addOrderBtn.TabIndex = 41;
+            this.addOrderBtn.Text = "Add Order";
+            this.addOrderBtn.UseVisualStyleBackColor = false;
+            // 
+            // panel35
+            // 
+            this.panel35.Controls.Add(this.txtCar);
+            this.panel35.Controls.Add(this.label24);
+            this.panel35.Location = new System.Drawing.Point(3, 283);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(350, 50);
+            this.panel35.TabIndex = 17;
+            // 
+            // txtCar
+            // 
+            this.txtCar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCar.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCar.Location = new System.Drawing.Point(116, 12);
+            this.txtCar.Name = "txtCar";
+            this.txtCar.Size = new System.Drawing.Size(231, 20);
+            this.txtCar.TabIndex = 8;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(41, 16);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(69, 16);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "Car Name:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(72, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 16);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Cost:";
+            // 
+            // txtCost
+            // 
+            this.txtCost.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCost.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCost.Location = new System.Drawing.Point(116, 12);
+            this.txtCost.Name = "txtCost";
+            this.txtCost.Size = new System.Drawing.Size(231, 20);
+            this.txtCost.TabIndex = 8;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.txtCost);
+            this.panel16.Controls.Add(this.label11);
+            this.panel16.Location = new System.Drawing.Point(3, 171);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(350, 50);
+            this.panel16.TabIndex = 16;
+            // 
+            // panel37
+            // 
+            this.panel37.Controls.Add(this.txtPhone);
+            this.panel37.Controls.Add(this.label26);
+            this.panel37.Location = new System.Drawing.Point(3, 227);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(350, 50);
+            this.panel37.TabIndex = 17;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhone.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(116, 12);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(231, 20);
+            this.txtPhone.TabIndex = 8;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(10, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 16);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Phone Number:";
+            // 
+            // panel40
+            // 
+            this.panel40.Controls.Add(this.txtDiscount);
+            this.panel40.Controls.Add(this.label29);
+            this.panel40.Location = new System.Drawing.Point(3, 339);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(350, 50);
+            this.panel40.TabIndex = 18;
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDiscount.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.Location = new System.Drawing.Point(116, 12);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(231, 20);
+            this.txtDiscount.TabIndex = 8;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(41, 16);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(66, 16);
+            this.label29.TabIndex = 7;
+            this.label29.Text = "Discount:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(269, 482);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(44, 16);
+            this.label30.TabIndex = 42;
+            this.label30.Text = "Total: ";
+            // 
+            // totalPriceLabel
+            // 
+            this.totalPriceLabel.AutoSize = true;
+            this.totalPriceLabel.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceLabel.Location = new System.Drawing.Point(310, 482);
+            this.totalPriceLabel.Name = "totalPriceLabel";
+            this.totalPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.totalPriceLabel.TabIndex = 43;
+            // 
             // managerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1880,22 +2053,24 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabCustomers.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabCustomerService.ResumeLayout(false);
+            this.tabCustomerService.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel18.ResumeLayout(false);
@@ -1940,6 +2115,14 @@
             this.panel36.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKOrderStaffBindingSource)).EndInit();
+            this.panel35.ResumeLayout(false);
+            this.panel35.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            this.panel37.ResumeLayout(false);
+            this.panel37.PerformLayout();
+            this.panel40.ResumeLayout(false);
+            this.panel40.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2006,7 +2189,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.Button btnUpdateCustomer;
-        private System.Windows.Forms.Button btnCreateCustomer;
         private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
@@ -2020,9 +2202,6 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.DateTimePicker dateCustomerService;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox txtCost;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.ComboBox combServiceName;
         private System.Windows.Forms.Label label12;
@@ -2090,7 +2269,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.TextBox customerCar;
+        private System.Windows.Forms.TextBox customerPhone;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView servicesDataGridView;
         private AutoCleanDatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -2100,8 +2279,27 @@
         private System.Windows.Forms.BindingSource customerBindingSource;
         private AutoCleanDatabaseDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
         private System.Windows.Forms.DataGridView customerDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerIdRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerNameRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerPhoneRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerCarRow;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.TextBox carTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button addOrderBtn;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.TextBox txtCar;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.TextBox txtCost;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label totalPriceLabel;
+        private System.Windows.Forms.Label label30;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(managerLogin));
             this.panelLogin = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
@@ -39,9 +40,15 @@
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.autoCleanDatabaseDataSet = new Auto_Clean_System.AutoCleanDatabaseDataSet();
+            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.staffTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.StaffTableAdapter();
+            this.tableAdapterManager = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.TableAdapterManager();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLogin
@@ -173,6 +180,31 @@
             this.lblTitle.TabIndex = 7;
             this.lblTitle.Text = "Manager Login";
             // 
+            // autoCleanDatabaseDataSet
+            // 
+            this.autoCleanDatabaseDataSet.DataSetName = "AutoCleanDatabaseDataSet";
+            this.autoCleanDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // staffBindingSource
+            // 
+            this.staffBindingSource.DataMember = "Staff";
+            this.staffBindingSource.DataSource = this.autoCleanDatabaseDataSet;
+            // 
+            // staffTableAdapter
+            // 
+            this.staffTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CustomerTableAdapter = null;
+            this.tableAdapterManager.MerchantTableAdapter = null;
+            this.tableAdapterManager.OrdersDetailsTableAdapter = null;
+            this.tableAdapterManager.OrdersTableAdapter = null;
+            this.tableAdapterManager.ServicesTableAdapter = null;
+            this.tableAdapterManager.StaffTableAdapter = this.staffTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // managerLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,10 +218,13 @@
             this.MinimumSize = new System.Drawing.Size(920, 450);
             this.Name = "managerLogin";
             this.Text = "Manager Login";
+            this.Load += new System.EventHandler(this.managerLogin_Load);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +241,9 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnLogin;
+        private AutoCleanDatabaseDataSet autoCleanDatabaseDataSet;
+        private System.Windows.Forms.BindingSource staffBindingSource;
+        private AutoCleanDatabaseDataSetTableAdapters.StaffTableAdapter staffTableAdapter;
+        private AutoCleanDatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

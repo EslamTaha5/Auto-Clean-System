@@ -22,4 +22,5 @@ C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto C
 C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto Clean System.csproj.CoreCompileInputs.cache
 C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto Clean System.exe
 C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto Clean System.pdb
-C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto_Clean_System.TryForm.resources
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto_Clean_System.EmployeeDashboard.resources
+C:\Users\i777s\Source\Repos\Auto-Clean-System\Auto Clean System\obj\Debug\Auto_Clean_System.EmployeeLogin.resources
