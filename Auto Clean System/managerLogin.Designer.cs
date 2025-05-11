@@ -36,9 +36,9 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -46,6 +46,7 @@
             // 
             // panelLogin
             // 
+            this.panelLogin.AutoScroll = true;
             this.panelLogin.BackColor = System.Drawing.Color.White;
             this.panelLogin.Controls.Add(this.btnBack);
             this.panelLogin.Controls.Add(this.btnLogin);
@@ -102,7 +103,7 @@
             this.txtPassword.Location = new System.Drawing.Point(534, 100);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(200, 20);
+            this.txtPassword.Size = new System.Drawing.Size(266, 20);
             this.txtPassword.TabIndex = 8;
             // 
             // lblPassword
@@ -123,7 +124,7 @@
             this.txtUsername.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(534, 56);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(200, 20);
+            this.txtUsername.Size = new System.Drawing.Size(266, 20);
             this.txtUsername.TabIndex = 6;
             // 
             // lblUsername
@@ -135,18 +136,6 @@
             this.lblUsername.Size = new System.Drawing.Size(72, 16);
             this.lblUsername.TabIndex = 5;
             this.lblUsername.Text = "Username:";
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Aura", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(282, 18);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(338, 64);
-            this.lblTitle.TabIndex = 7;
-            this.lblTitle.Text = "Manager Login";
             // 
             // picLogin
             // 
@@ -171,6 +160,18 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 4;
             this.picLogo.TabStop = false;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Aura", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(282, 18);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(338, 64);
+            this.lblTitle.TabIndex = 7;
+            this.lblTitle.Text = "Manager Login";
             // 
             // managerLogin
             // 

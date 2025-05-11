@@ -5,13 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7192CF3B-62D2-4C7A-B8AC-1D85B42795E3}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Auto_Clean_System</RootNamespace>
     <AssemblyName>Auto Clean System</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -61,6 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoCleanDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoCleanDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="managerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +89,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaffClass.cs" />
+    <Compile Include="TryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TryForm.Designer.cs">
+      <DependentUpon>TryForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="managerDashboard.resx">
       <DependentUpon>managerDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +115,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TryForm.resx">
+      <DependentUpon>TryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AutoCleanDatabaseDataSet.xsc">
+      <DependentUpon>AutoCleanDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AutoCleanDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AutoCleanDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AutoCleanDatabaseDataSet.xss">
+      <DependentUpon>AutoCleanDatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,15 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Person_1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AutoCleanDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AutoCleanDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>AutoCleanDatabase.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
