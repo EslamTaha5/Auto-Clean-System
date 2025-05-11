@@ -8,8 +8,8 @@ namespace Auto_Clean_System {
     public class StaffClass {
         public string name {  get; set; } 
         public long staffID {  get; set; }
-        public int salary {  get; set; }
-        public int bonus {  get; set; }
+        public decimal salary {  get; set; }
+        public decimal bonus {  get; set; }
         public string password { get; set; }
         public int isManager { get; set; }
         public StaffClass() { }
@@ -20,7 +20,7 @@ namespace Auto_Clean_System {
             this.password = Password;
             this.isManager = 1;
         }
-        public StaffClass(string name, long staffID, int salary, int bonus, string password, int isManager) {
+        public StaffClass(string name, long staffID, decimal salary, decimal bonus, string password, int isManager) {
             this.name = name;
             this.staffID = staffID;
             this.salary = salary;

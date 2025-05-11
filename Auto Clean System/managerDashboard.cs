@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static Auto_Clean_System.AutoCleanDatabaseDataSet;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters;
 
 namespace Auto_Clean_System {
     public partial class managerDashboard : Form {
@@ -55,13 +59,17 @@ namespace Auto_Clean_System {
         }
 
         private void managerDashboard_Load(object sender, EventArgs e) {
+            // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.Merchant' table. You can move, or remove it, as needed.
+            this.merchantTableAdapter.Fill(this.autoCleanDatabaseDataSet.Merchant);
             // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.autoCleanDatabaseDataSet.Customer);
             // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.Customer' table. You can move, or remove it, as needed.
             // this.customerTableAdapter.Fill(this.autoCleanDatabaseDataSet.Customer);
             this.staffTableAdapter.showEmployees(this.autoCleanDatabaseDataSet.Staff);
             this.servicesTableAdapter.Fill(this.autoCleanDatabaseDataSet.Services);
+            this.merchantTableAdapter.Fill(this.autoCleanDatabaseDataSet.Merchant);
             loadServicesIntoComboBox();
+
             // TODO: This line of code loads data into the 'autoCleanDatabaseDataSe
 
         }
@@ -79,17 +87,20 @@ namespace Auto_Clean_System {
             }
 
         }
+        private void showAllEmployeeBtn_Click(object sender, EventArgs e) {
+            this.staffTableAdapter.showEmployees(this.autoCleanDatabaseDataSet.Staff);
 
+        }
         StaffClass checkUser() {
             if (!long.TryParse(employeeId.Text, out long userID)) {
                 MessageBox.Show("Invalid ID");
                 return null;
             }
-            if (!int.TryParse(employeeBonus.Text, out int userBonus)) {
+            if (!decimal.TryParse(employeeBonus.Text, out decimal userBonus)) {
                 MessageBox.Show("Invalid Bonus");
                 return null;
             }
-            if (!int.TryParse(employeeSalary.Text, out int userSalary)) {
+            if (!decimal.TryParse(employeeSalary.Text, out decimal userSalary)) {
                 MessageBox.Show("Invalid Salary");
                 return null;
             }
@@ -124,14 +135,52 @@ namespace Auto_Clean_System {
 
         }
 
+
+        private void showAllBtn_Click(object sender, EventArgs e) {
+            this.customerTableAdapter.Fill(autoCleanDatabaseDataSet.Customer);
+        }
+
         private void btnSearch_Click(object sender, EventArgs e) {
             string name = employeeName.Text;
             this.staffTableAdapter.FindByName(this.autoCleanDatabaseDataSet.Staff, name);
         }
 
-        private void employeeDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+       
+        private void employeeDataGrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex == -1) {
+                return;
+            }
+            DataGridViewRow selRow = employeeDataGrid.Rows[e.RowIndex];
 
+            try {
+
+                employeeName.Text = selRow.Cells["staffNameCol"].Value.ToString();
+                employeeId.Text = selRow.Cells["staffIdCol"].Value.ToString();
+                employeeSalary.Text = selRow.Cells["staffSalaryCol"].Value.ToString();
+                employeePassword.Text = selRow.Cells["staffPassCol"].Value.ToString();
+                employeeBonus.Text = selRow.Cells["staffBonusCol"].Value.ToString();
+
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e) {
+            StaffClass user = checkUser();
+            if (user == null) return;
+            DialogResult result = MessageBox.Show($"Update User With ID {user.staffID}", "Update User", MessageBoxButtons.YesNo);
+            if (result.Equals(DialogResult.Yes)) {
+                try {
+                    this.staffTableAdapter.updateUser(user.name, user.password, user.salary, user.bonus, user.staffID);
+                    this.staffBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
+                    this.staffTableAdapter.showEmployees(autoCleanDatabaseDataSet.Staff);
+                }catch(Exception ex) {
+                    MessageBox.Show($"Error while updating customer {ex.Message}");
+                }
+            }
+        }
+
         // Services Panel
         private void btnSearchService_Click(object sender, EventArgs e) {
             string name = serviceName.Text;
@@ -251,7 +300,7 @@ namespace Auto_Clean_System {
             CustomerIdNum = int.Parse(customerIdString);
             Console.WriteLine($"NAME : {customerNameString}, ID {CustomerIdNum}, Car {customerCarString}");
 
-            this.customerTableAdapter.FindCustomerByNameAndCar(autoCleanDatabaseDataSet.Customer, customerNameString, customerCarString, CustomerIdNum);
+            this.customerTableAdapter.FindCustomerByNameAndCar(autoCleanDatabaseDataSet.Customer, customerNameString);
         }
 
         private void btnCreateCustomer_Click(object sender, EventArgs e) {
@@ -294,7 +343,7 @@ namespace Auto_Clean_System {
             DialogResult res = MessageBox.Show($"Update Customer with ID{customer.customerID}!", "Update Customer", MessageBoxButtons.YesNo);
 
             if (res.Equals(DialogResult.Yes)) {
-                this.customerTableAdapter.updateCustomer(customer.customerName, customer.phoneNumber, customer.customerCar, customer.customerID);
+                this.customerTableAdapter.updateCustomer(customer.customerName, customer.phoneNumber, customer.customerID);
                 Program.StaffBindingSource.EndEdit();
                 Program.AdapterManager.UpdateAll(Program.AppDataSet);
                 Program.SaveAllData();
@@ -313,9 +362,10 @@ namespace Auto_Clean_System {
             DataGridViewRow selRow = customerDataGridView.Rows[e.RowIndex];
 
             try {
+                customerName.Text = selRow.Cells["customerNameRow"].Value.ToString();
                 customerId.Text = selRow.Cells["customerIdRow"].Value.ToString();
-                customerId.Text = selRow.Cells["customerNameRow"].Value.ToString();
                 customerPhone.Text = selRow.Cells["customerPhoneRow"].Value.ToString();
+                CarTextBox.Text = selRow.Cells["customerCarRow"].Value.ToString();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
@@ -331,6 +381,11 @@ namespace Auto_Clean_System {
                 combServiceNameOrder.DataSource = autoCleanDatabaseDataSet.Services;
                 combServiceNameOrder.DisplayMember = "ServiceName";
                 combServiceNameOrder.ValueMember = "ServiceID";
+                combServiceNameOrder.SelectedIndex = -1;
+                cmbServices.DataSource = autoCleanDatabaseDataSet.Services;
+                cmbServices.DisplayMember = "ServiceName";
+                cmbServices.SelectedIndex = -1;
+
             } catch (Exception ex) {
                 MessageBox.Show($"Error loading services: {ex.Message}");
             }
@@ -382,23 +437,43 @@ namespace Auto_Clean_System {
         void insertCustomer(OrderPage order) {
             try {
                 // Explicitly convert Car to string
-                string CarValue = order.CarName != null ? order.CarName.ToString() : string.Empty;
-                Console.WriteLine(CarValue);    
-                this.customerTableAdapter.insertCustomer(order.customerName, order.customerPhone, CarValue);
+                
+                object result = this.customerTableAdapter.FindCustomer(order.CarName, order.customerPhone, order.CarName);
+
+                // findUser returns integer the number of users found with these credentials
+                if (result != null && result != DBNull.Value) {
+                    decimal users = Convert.ToDecimal(result);
+                    if (users != 0) return;
+                }
+                this.customerTableAdapter.insertCustomer(order.customerName, order.customerPhone, order.CarName);
                 this.customerBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
+                this.customerTableAdapter.Fill(this.autoCleanDatabaseDataSet.Customer);
+
             } catch (Exception ex) {
                 MessageBox.Show($"Error inserting customer: {ex.Message}");
             }
         }
 
-     
+
         void insertOrderDetail(OrderPage order) {
-            this.ordersTableAdapter.insertOrder(order.customerID, order.employeeID, order.CarName, order.cost, order.discount
-                , order.totalCost);
+            try {
+                this.ordersTableAdapter.insertOrder(order.customerID, order.employeeID, order.CarName, (int)order.cost, order.discount, (int)order.totalCost);
+                this.fKOrderStaffBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
+
+            }catch(Exception ex) {
+                MessageBox.Show($"Error In Order Insert {ex.Message}");
+            }
         }
+
         void insertOrder(OrderPage order) {
             insertCustomer(order);
+            object result = this.customerTableAdapter.FindCustomerID(order.customerName, order.customerPhone, order.CarName);
+            if (result != null && result != DBNull.Value) {
+                order.customerID = Convert.ToInt32(result);
+            }
+            Console.WriteLine($"Customer ID {order.customerID}");
             insertOrderDetail(order);
         }
         private void addOrderBtn_Click(object sender, EventArgs e) {
@@ -408,49 +483,111 @@ namespace Auto_Clean_System {
                 MessageBox.Show("Invalid Order Data!");
                 return;
             }
-
+            
             insertOrder(order);
+            MessageBox.Show("Order Completed!");
 
         }
 
-    private void combServiceNameOrder_SelectedIndexChanged(object sender, EventArgs e) {
-        // Check if an item is actually selected
-        if (combServiceNameOrder.SelectedItem == null || combServiceNameOrder.SelectedIndex < 0) {
-            txtCostOrder.Text = "0.00";
-            return;
+        private void combServiceNameOrder_SelectedIndexChanged(object sender, EventArgs e) {
+            // Check if an item is actually selected
+            if (combServiceNameOrder.SelectedItem == null || combServiceNameOrder.SelectedIndex < 0) {
+                txtCostOrder.Text = "0.00";
+                totalPriceLabel.Text = "0.00";
+                return;
+            }
+
+            try {
+                // Get the selected row from the data source
+                DataRowView selectedRow = (DataRowView)combServiceNameOrder.SelectedItem;
+
+                // Get the cost from the StandardCost column
+                decimal serviceCost = Convert.ToDecimal(selectedRow["StandardCost"]);
+
+                // Update the cost textbox
+                txtCostOrder.Text = serviceCost.ToString("F2"); // Format with 2 decimal places
+
+                // Optional: Auto-calculate total if you have discount logic
+                CalculateTotal();
+
+            } catch (Exception ex) {
+                MessageBox.Show($"Error getting service cost: {ex.Message}");
+                txtCostOrder.Text = "0.00";
+            }
         }
-
-        try {
-            // Get the selected row from the data source
-            DataRowView selectedRow = (DataRowView)combServiceNameOrder.SelectedItem;
-
-            // Get the cost from the StandardCost column
-            decimal serviceCost = Convert.ToDecimal(selectedRow["StandardCost"]);
-
-            // Update the cost textbox
-            txtCostOrder.Text = serviceCost.ToString("F2"); // Format with 2 decimal places
-
-            // Optional: Auto-calculate total if you have discount logic
-            CalculateTotal();
-
-        } catch (Exception ex) {
-            MessageBox.Show($"Error getting service cost: {ex.Message}");
-            txtCostOrder.Text = "0.00";
-        }
-    }
-    private void CalculateTotal() {
-        if (decimal.TryParse(txtCostOrder.Text, out decimal cost) &&
-            decimal.TryParse(txtDiscountOrder.Text, out decimal discount)) {
-            decimal total = cost - (cost * discount / 100);
-            // Update your total field if you have one
+        private void CalculateTotal() {
+                decimal total = 0;
+            if (decimal.TryParse(txtCostOrder.Text, out decimal cost) &&
+                decimal.TryParse(txtDiscountOrder.Text, out decimal discount)) {
+                total = cost - (cost * discount / 100);
+                // Update your total field if you have one
+            }
             totalPriceLabel.Text = total.ToString();
         }
-    }
+
+        private void txtDiscountOrder_TextChanged(object sender, EventArgs e) {
+            CalculateTotal();
+        }
 
         private void tabProfile_Click(object sender, EventArgs e) {
 
         }
 
+        Merchant getMerchant() {
+            if (merchantName.Text.Length == 0) return null;
+            if (!int.TryParse(merchantCost.Text, out int cost)) return null;
+            if (!long.TryParse(MerchantId.Text, out long id)) ;
+            if (merchantDeal.Text.Length == 0) return null;
+            Merchant mer = new Merchant(merchantName.Text, merchantDeal.Text, cost, id, merchantDate.Value.ToUniversalTime());
+            return mer;
+        }
+        private void btnCreateMerchant_Click(object sender, EventArgs e) {
+            Merchant mer = getMerchant();
+            if (mer == null) {
+                MessageBox.Show("Invalid Merchant data!");
+                return;
+            }
+
+            this.merchantTableAdapter.insertMerchant(mer.id, mer.name, mer.dealName, mer.cost, mer.time.Date);
+            this.merchantBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
+            this.merchantTableAdapter.Fill(autoCleanDatabaseDataSet.Merchant);
+
+        }
+
+        private void btnSearchMerchant_Click(object sender, EventArgs e) {
+            string name = merchantName.Text;
+            this.merchantTableAdapter.FindByName(autoCleanDatabaseDataSet.Merchant,name);
+
+        }
+
+        private void showAllMerchantBtn_Click(object sender, EventArgs e) {
+            this.merchantTableAdapter.Fill(autoCleanDatabaseDataSet.Merchant);
+        }
+
+        private void btnDeleteMerchant_Click(object sender, EventArgs e) {
+            if(!long.TryParse(MerchantId.Text, out long id)) {
+                MessageBox.Show("Invalid Merchant ID!");
+                return;
+            }
+            DialogResult result = MessageBox.Show("Delete Selected Merchant !", "Delete Merchant!", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes) {
+                this.merchantTableAdapter.deleteMerchant(id);
+                this.merchantBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
+                this.merchantTableAdapter.Fill(autoCleanDatabaseDataSet.Merchant);
+            }
+        }
+
+        private void tabCustomerService_Click(object sender, EventArgs e) {
+
+        }
+
+
+
+
         // Merchant Panel
+
+
     }
 }

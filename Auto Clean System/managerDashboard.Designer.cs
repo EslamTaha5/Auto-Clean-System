@@ -39,12 +39,19 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.picManager = new System.Windows.Forms.PictureBox();
             this.tabEmployees = new System.Windows.Forms.TabPage();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.employeeDataGrid = new System.Windows.Forms.DataGridView();
+            this.staffIdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffPassCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffSalaryCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffBonusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffHireCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoCleanDatabaseDataSet = new Auto_Clean_System.AutoCleanDatabaseDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.employeeName = new System.Windows.Forms.TextBox();
@@ -63,7 +70,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabCustomers = new System.Windows.Forms.TabPage();
-            this.btnDeleteCustomer = new System.Windows.Forms.Button();
+            this.showAllBtn = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.customerPhone = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -71,6 +78,11 @@
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.customerDataGridView = new System.Windows.Forms.DataGridView();
+            this.customerIdRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerNameRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerPhoneRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerCarRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.customerName = new System.Windows.Forms.TextBox();
@@ -116,6 +128,10 @@
             this.btnSearchService = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
             this.servicesDataGridView = new System.Windows.Forms.DataGridView();
+            this.ServiceIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StandardCostCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.serviceName = new System.Windows.Forms.TextBox();
@@ -129,10 +145,17 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabMerchant = new System.Windows.Forms.TabPage();
             this.btnDeleteMerchant = new System.Windows.Forms.Button();
-            this.btnUpdateMerchant = new System.Windows.Forms.Button();
+            this.showAllMerchantBtn = new System.Windows.Forms.Button();
             this.btnCreateMerchant = new System.Windows.Forms.Button();
             this.btnSearchMerchant = new System.Windows.Forms.Button();
             this.panel24 = new System.Windows.Forms.Panel();
+            this.merchantDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.merchantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel25 = new System.Windows.Forms.Panel();
             this.panel26 = new System.Windows.Forms.Panel();
             this.merchantDate = new System.Windows.Forms.DateTimePicker();
@@ -171,28 +194,13 @@
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bonusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hireDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.autoCleanDatabaseDataSet = new Auto_Clean_System.AutoCleanDatabaseDataSet();
-            this.customerIdRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerNameRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerPhoneRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerCarRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ServiceIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StandardCostCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicesTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.ServicesTableAdapter();
             this.staffTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.StaffTableAdapter();
             this.ordersTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.OrdersTableAdapter();
             this.tableAdapterManager = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.TableAdapterManager();
             this.customerTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.CustomerTableAdapter();
+            this.merchantTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.MerchantTableAdapter();
+            this.showAllEmployeeBtn = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -204,6 +212,8 @@
             this.tabEmployees.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -215,6 +225,7 @@
             this.panel13.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -233,12 +244,16 @@
             this.tabServices.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel27.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabMerchant.SuspendLayout();
+            this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.merchantDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.merchantBindingSource)).BeginInit();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel28.SuspendLayout();
@@ -254,10 +269,6 @@
             this.panel36.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKOrderStaffBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -425,7 +436,7 @@
             // 
             // tabEmployees
             // 
-            this.tabEmployees.Controls.Add(this.btnDelete);
+            this.tabEmployees.Controls.Add(this.showAllEmployeeBtn);
             this.tabEmployees.Controls.Add(this.btnUpdate);
             this.tabEmployees.Controls.Add(this.btnCreate);
             this.tabEmployees.Controls.Add(this.btnSearch);
@@ -440,20 +451,6 @@
             this.tabEmployees.Text = "Employees";
             this.tabEmployees.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(612, 352);
-            this.btnDelete.MaximumSize = new System.Drawing.Size(120, 40);
-            this.btnDelete.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(120, 40);
-            this.btnDelete.TabIndex = 23;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
@@ -467,6 +464,7 @@
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 
@@ -511,17 +509,64 @@
             this.employeeDataGrid.AutoGenerateColumns = false;
             this.employeeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeeDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.staffIDDataGridViewTextBoxColumn,
-            this.nAMEDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.salaryDataGridViewTextBoxColumn,
-            this.bonusDataGridViewTextBoxColumn,
-            this.hireDateDataGridViewTextBoxColumn});
+            this.staffIdCol,
+            this.staffNameCol,
+            this.staffPassCol,
+            this.staffSalaryCol,
+            this.staffBonusCol,
+            this.staffHireCol});
             this.employeeDataGrid.DataSource = this.staffBindingSource;
             this.employeeDataGrid.Location = new System.Drawing.Point(3, 3);
             this.employeeDataGrid.Name = "employeeDataGrid";
             this.employeeDataGrid.Size = new System.Drawing.Size(500, 291);
             this.employeeDataGrid.TabIndex = 0;
+            this.employeeDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDataGrid_CellContentClick_1);
+            // 
+            // staffIdCol
+            // 
+            this.staffIdCol.DataPropertyName = "StaffID";
+            this.staffIdCol.HeaderText = "StaffID";
+            this.staffIdCol.Name = "staffIdCol";
+            // 
+            // staffNameCol
+            // 
+            this.staffNameCol.DataPropertyName = "NAME";
+            this.staffNameCol.HeaderText = "NAME";
+            this.staffNameCol.Name = "staffNameCol";
+            // 
+            // staffPassCol
+            // 
+            this.staffPassCol.DataPropertyName = "Password";
+            this.staffPassCol.HeaderText = "Password";
+            this.staffPassCol.Name = "staffPassCol";
+            // 
+            // staffSalaryCol
+            // 
+            this.staffSalaryCol.DataPropertyName = "Salary";
+            this.staffSalaryCol.HeaderText = "Salary";
+            this.staffSalaryCol.Name = "staffSalaryCol";
+            // 
+            // staffBonusCol
+            // 
+            this.staffBonusCol.DataPropertyName = "Bonus";
+            this.staffBonusCol.HeaderText = "Bonus";
+            this.staffBonusCol.Name = "staffBonusCol";
+            // 
+            // staffHireCol
+            // 
+            this.staffHireCol.DataPropertyName = "HireDate";
+            this.staffHireCol.HeaderText = "HireDate";
+            this.staffHireCol.Name = "staffHireCol";
+            // 
+            // staffBindingSource
+            // 
+            this.staffBindingSource.DataMember = "Staff";
+            this.staffBindingSource.DataSource = this.autoCleanDatabaseDataSet;
+            // 
+            // autoCleanDatabaseDataSet
+            // 
+            this.autoCleanDatabaseDataSet.DataSetName = "AutoCleanDatabaseDataSet";
+            this.autoCleanDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -699,7 +744,7 @@
             // tabCustomers
             // 
             this.tabCustomers.AutoScroll = true;
-            this.tabCustomers.Controls.Add(this.btnDeleteCustomer);
+            this.tabCustomers.Controls.Add(this.showAllBtn);
             this.tabCustomers.Controls.Add(this.panel13);
             this.tabCustomers.Controls.Add(this.btnUpdateCustomer);
             this.tabCustomers.Controls.Add(this.btnSearchCustomer);
@@ -714,19 +759,20 @@
             this.tabCustomers.Text = "Customers";
             this.tabCustomers.UseVisualStyleBackColor = true;
             // 
-            // btnDeleteCustomer
+            // showAllBtn
             // 
-            this.btnDeleteCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDeleteCustomer.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(625, 390);
-            this.btnDeleteCustomer.MaximumSize = new System.Drawing.Size(120, 40);
-            this.btnDeleteCustomer.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(120, 40);
-            this.btnDeleteCustomer.TabIndex = 41;
-            this.btnDeleteCustomer.Text = "Delete";
-            this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            this.showAllBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.showAllBtn.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAllBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.showAllBtn.Location = new System.Drawing.Point(653, 390);
+            this.showAllBtn.MaximumSize = new System.Drawing.Size(120, 40);
+            this.showAllBtn.MinimumSize = new System.Drawing.Size(120, 40);
+            this.showAllBtn.Name = "showAllBtn";
+            this.showAllBtn.Size = new System.Drawing.Size(120, 40);
+            this.showAllBtn.TabIndex = 42;
+            this.showAllBtn.Text = "Show All";
+            this.showAllBtn.UseVisualStyleBackColor = false;
+            this.showAllBtn.Click += new System.EventHandler(this.showAllBtn_Click);
             // 
             // panel13
             // 
@@ -811,6 +857,36 @@
             this.customerDataGridView.Size = new System.Drawing.Size(427, 280);
             this.customerDataGridView.TabIndex = 0;
             this.customerDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGridView_CellContentClick);
+            // 
+            // customerIdRow
+            // 
+            this.customerIdRow.DataPropertyName = "CustomerID";
+            this.customerIdRow.HeaderText = "CustomerID";
+            this.customerIdRow.Name = "customerIdRow";
+            this.customerIdRow.ReadOnly = true;
+            // 
+            // CustomerNameRow
+            // 
+            this.CustomerNameRow.DataPropertyName = "Name";
+            this.CustomerNameRow.HeaderText = "Name";
+            this.CustomerNameRow.Name = "CustomerNameRow";
+            // 
+            // customerPhoneRow
+            // 
+            this.customerPhoneRow.DataPropertyName = "PhoneNumber";
+            this.customerPhoneRow.HeaderText = "PhoneNumber";
+            this.customerPhoneRow.Name = "customerPhoneRow";
+            // 
+            // customerCarRow
+            // 
+            this.customerCarRow.DataPropertyName = "Car";
+            this.customerCarRow.HeaderText = "Car";
+            this.customerCarRow.Name = "customerCarRow";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.autoCleanDatabaseDataSet;
             // 
             // panel9
             // 
@@ -937,6 +1013,7 @@
             this.tabCustomerService.TabIndex = 3;
             this.tabCustomerService.Text = "Customer Service";
             this.tabCustomerService.UseVisualStyleBackColor = true;
+            this.tabCustomerService.Click += new System.EventHandler(this.tabCustomerService_Click);
             // 
             // totalPriceLabel
             // 
@@ -1005,6 +1082,8 @@
             this.txtDiscountOrder.Name = "txtDiscountOrder";
             this.txtDiscountOrder.Size = new System.Drawing.Size(231, 20);
             this.txtDiscountOrder.TabIndex = 8;
+            this.txtDiscountOrder.Text = "0.0";
+            this.txtDiscountOrder.TextChanged += new System.EventHandler(this.txtDiscountOrder_TextChanged);
             // 
             // label29
             // 
@@ -1308,6 +1387,29 @@
             this.servicesDataGridView.TabIndex = 0;
             this.servicesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.servicesDataGridView_CellContentClick);
             // 
+            // ServiceIDCol
+            // 
+            this.ServiceIDCol.DataPropertyName = "ServiceID";
+            this.ServiceIDCol.HeaderText = "ServiceID";
+            this.ServiceIDCol.Name = "ServiceIDCol";
+            // 
+            // ServiceNameCol
+            // 
+            this.ServiceNameCol.DataPropertyName = "ServiceName";
+            this.ServiceNameCol.HeaderText = "ServiceName";
+            this.ServiceNameCol.Name = "ServiceNameCol";
+            // 
+            // StandardCostCol
+            // 
+            this.StandardCostCol.DataPropertyName = "StandardCost";
+            this.StandardCostCol.HeaderText = "StandardCost";
+            this.StandardCostCol.Name = "StandardCostCol";
+            // 
+            // servicesBindingSource
+            // 
+            this.servicesBindingSource.DataMember = "Services";
+            this.servicesBindingSource.DataSource = this.autoCleanDatabaseDataSet;
+            // 
             // panel21
             // 
             this.panel21.Controls.Add(this.panel22);
@@ -1421,8 +1523,9 @@
             // 
             // tabMerchant
             // 
+            this.tabMerchant.AutoScroll = true;
             this.tabMerchant.Controls.Add(this.btnDeleteMerchant);
-            this.tabMerchant.Controls.Add(this.btnUpdateMerchant);
+            this.tabMerchant.Controls.Add(this.showAllMerchantBtn);
             this.tabMerchant.Controls.Add(this.btnCreateMerchant);
             this.tabMerchant.Controls.Add(this.btnSearchMerchant);
             this.tabMerchant.Controls.Add(this.panel24);
@@ -1449,20 +1552,22 @@
             this.btnDeleteMerchant.TabIndex = 47;
             this.btnDeleteMerchant.Text = "Delete";
             this.btnDeleteMerchant.UseVisualStyleBackColor = false;
+            this.btnDeleteMerchant.Click += new System.EventHandler(this.btnDeleteMerchant_Click);
             // 
-            // btnUpdateMerchant
+            // showAllMerchantBtn
             // 
-            this.btnUpdateMerchant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
-            this.btnUpdateMerchant.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateMerchant.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdateMerchant.Location = new System.Drawing.Point(461, 390);
-            this.btnUpdateMerchant.MaximumSize = new System.Drawing.Size(120, 40);
-            this.btnUpdateMerchant.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnUpdateMerchant.Name = "btnUpdateMerchant";
-            this.btnUpdateMerchant.Size = new System.Drawing.Size(120, 40);
-            this.btnUpdateMerchant.TabIndex = 46;
-            this.btnUpdateMerchant.Text = "Update";
-            this.btnUpdateMerchant.UseVisualStyleBackColor = false;
+            this.showAllMerchantBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.showAllMerchantBtn.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAllMerchantBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.showAllMerchantBtn.Location = new System.Drawing.Point(461, 390);
+            this.showAllMerchantBtn.MaximumSize = new System.Drawing.Size(120, 40);
+            this.showAllMerchantBtn.MinimumSize = new System.Drawing.Size(120, 40);
+            this.showAllMerchantBtn.Name = "showAllMerchantBtn";
+            this.showAllMerchantBtn.Size = new System.Drawing.Size(120, 40);
+            this.showAllMerchantBtn.TabIndex = 46;
+            this.showAllMerchantBtn.Text = "Show All";
+            this.showAllMerchantBtn.UseVisualStyleBackColor = false;
+            this.showAllMerchantBtn.Click += new System.EventHandler(this.showAllMerchantBtn_Click);
             // 
             // btnCreateMerchant
             // 
@@ -1477,6 +1582,7 @@
             this.btnCreateMerchant.TabIndex = 45;
             this.btnCreateMerchant.Text = "Create";
             this.btnCreateMerchant.UseVisualStyleBackColor = false;
+            this.btnCreateMerchant.Click += new System.EventHandler(this.btnCreateMerchant_Click);
             // 
             // btnSearchMerchant
             // 
@@ -1491,13 +1597,66 @@
             this.btnSearchMerchant.TabIndex = 44;
             this.btnSearchMerchant.Text = "Search";
             this.btnSearchMerchant.UseVisualStyleBackColor = false;
+            this.btnSearchMerchant.Click += new System.EventHandler(this.btnSearchMerchant_Click);
             // 
             // panel24
             // 
+            this.panel24.Controls.Add(this.merchantDataGridView);
             this.panel24.Location = new System.Drawing.Point(359, 83);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(500, 280);
+            this.panel24.Size = new System.Drawing.Size(569, 280);
             this.panel24.TabIndex = 43;
+            // 
+            // merchantDataGridView
+            // 
+            this.merchantDataGridView.AutoGenerateColumns = false;
+            this.merchantDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.merchantDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.merchantDataGridView.DataSource = this.merchantBindingSource;
+            this.merchantDataGridView.Location = new System.Drawing.Point(3, 0);
+            this.merchantDataGridView.Name = "merchantDataGridView";
+            this.merchantDataGridView.Size = new System.Drawing.Size(511, 280);
+            this.merchantDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MerchantID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "MerchantID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DealName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "DealName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cost";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cost";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // merchantBindingSource
+            // 
+            this.merchantBindingSource.DataMember = "Merchant";
+            this.merchantBindingSource.DataSource = this.autoCleanDatabaseDataSet;
             // 
             // panel25
             // 
@@ -1857,105 +2016,6 @@
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
             // 
-            // staffIDDataGridViewTextBoxColumn
-            // 
-            this.staffIDDataGridViewTextBoxColumn.DataPropertyName = "StaffID";
-            this.staffIDDataGridViewTextBoxColumn.HeaderText = "StaffID";
-            this.staffIDDataGridViewTextBoxColumn.Name = "staffIDDataGridViewTextBoxColumn";
-            // 
-            // nAMEDataGridViewTextBoxColumn
-            // 
-            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            // 
-            // salaryDataGridViewTextBoxColumn
-            // 
-            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
-            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
-            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
-            // 
-            // bonusDataGridViewTextBoxColumn
-            // 
-            this.bonusDataGridViewTextBoxColumn.DataPropertyName = "Bonus";
-            this.bonusDataGridViewTextBoxColumn.HeaderText = "Bonus";
-            this.bonusDataGridViewTextBoxColumn.Name = "bonusDataGridViewTextBoxColumn";
-            // 
-            // hireDateDataGridViewTextBoxColumn
-            // 
-            this.hireDateDataGridViewTextBoxColumn.DataPropertyName = "HireDate";
-            this.hireDateDataGridViewTextBoxColumn.HeaderText = "HireDate";
-            this.hireDateDataGridViewTextBoxColumn.Name = "hireDateDataGridViewTextBoxColumn";
-            // 
-            // staffBindingSource
-            // 
-            this.staffBindingSource.DataMember = "Staff";
-            this.staffBindingSource.DataSource = this.autoCleanDatabaseDataSet;
-            // 
-            // autoCleanDatabaseDataSet
-            // 
-            this.autoCleanDatabaseDataSet.DataSetName = "AutoCleanDatabaseDataSet";
-            this.autoCleanDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerIdRow
-            // 
-            this.customerIdRow.DataPropertyName = "CustomerID";
-            this.customerIdRow.HeaderText = "CustomerID";
-            this.customerIdRow.Name = "customerIdRow";
-            this.customerIdRow.ReadOnly = true;
-            // 
-            // CustomerNameRow
-            // 
-            this.CustomerNameRow.DataPropertyName = "Name";
-            this.CustomerNameRow.HeaderText = "Name";
-            this.CustomerNameRow.Name = "CustomerNameRow";
-            // 
-            // customerPhoneRow
-            // 
-            this.customerPhoneRow.DataPropertyName = "PhoneNumber";
-            this.customerPhoneRow.HeaderText = "PhoneNumber";
-            this.customerPhoneRow.Name = "customerPhoneRow";
-            // 
-            // customerCarRow
-            // 
-            this.customerCarRow.DataPropertyName = "Car";
-            this.customerCarRow.HeaderText = "Car";
-            this.customerCarRow.Name = "customerCarRow";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.autoCleanDatabaseDataSet;
-            // 
-            // ServiceIDCol
-            // 
-            this.ServiceIDCol.DataPropertyName = "ServiceID";
-            this.ServiceIDCol.HeaderText = "ServiceID";
-            this.ServiceIDCol.Name = "ServiceIDCol";
-            // 
-            // ServiceNameCol
-            // 
-            this.ServiceNameCol.DataPropertyName = "ServiceName";
-            this.ServiceNameCol.HeaderText = "ServiceName";
-            this.ServiceNameCol.Name = "ServiceNameCol";
-            // 
-            // StandardCostCol
-            // 
-            this.StandardCostCol.DataPropertyName = "StandardCost";
-            this.StandardCostCol.HeaderText = "StandardCost";
-            this.StandardCostCol.Name = "StandardCostCol";
-            // 
-            // servicesBindingSource
-            // 
-            this.servicesBindingSource.DataMember = "Services";
-            this.servicesBindingSource.DataSource = this.autoCleanDatabaseDataSet;
-            // 
             // servicesTableAdapter
             // 
             this.servicesTableAdapter.ClearBeforeFill = true;
@@ -1982,6 +2042,25 @@
             // customerTableAdapter
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // merchantTableAdapter
+            // 
+            this.merchantTableAdapter.ClearBeforeFill = true;
+            // 
+            // showAllEmployeeBtn
+            // 
+            this.showAllEmployeeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.showAllEmployeeBtn.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAllEmployeeBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.showAllEmployeeBtn.Location = new System.Drawing.Point(614, 352);
+            this.showAllEmployeeBtn.MaximumSize = new System.Drawing.Size(120, 40);
+            this.showAllEmployeeBtn.MinimumSize = new System.Drawing.Size(120, 40);
+            this.showAllEmployeeBtn.Name = "showAllEmployeeBtn";
+            this.showAllEmployeeBtn.Size = new System.Drawing.Size(120, 40);
+            this.showAllEmployeeBtn.TabIndex = 24;
+            this.showAllEmployeeBtn.Text = "Show All";
+            this.showAllEmployeeBtn.UseVisualStyleBackColor = false;
+            this.showAllEmployeeBtn.Click += new System.EventHandler(this.showAllEmployeeBtn_Click);
             // 
             // managerDashboard
             // 
@@ -2010,6 +2089,8 @@
             this.tabEmployees.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -2027,6 +2108,7 @@
             this.panel13.PerformLayout();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
@@ -2056,6 +2138,7 @@
             this.tabServices.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             this.panel21.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
@@ -2065,6 +2148,9 @@
             this.panel27.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabMerchant.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.merchantDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.merchantBindingSource)).EndInit();
             this.panel25.ResumeLayout(false);
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
@@ -2089,10 +2175,6 @@
             this.panel36.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKOrderStaffBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2143,7 +2225,6 @@
         private System.Windows.Forms.TextBox employeeSalary;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnSearch;
@@ -2157,7 +2238,6 @@
         private System.Windows.Forms.Panel panel36;
         private System.Windows.Forms.TextBox txtRevenue;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.Panel panel8;
@@ -2194,7 +2274,7 @@
         private System.Windows.Forms.TextBox serviceCost;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnDeleteMerchant;
-        private System.Windows.Forms.Button btnUpdateMerchant;
+        private System.Windows.Forms.Button showAllMerchantBtn;
         private System.Windows.Forms.Button btnCreateMerchant;
         private System.Windows.Forms.Button btnSearchMerchant;
         private System.Windows.Forms.Panel panel24;
@@ -2226,12 +2306,6 @@
         private AutoCleanDatabaseDataSetTableAdapters.StaffTableAdapter staffTableAdapter;
         private System.Windows.Forms.BindingSource fKOrderStaffBindingSource;
         private AutoCleanDatabaseDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn staffIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bonusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hireDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
@@ -2268,5 +2342,21 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label totalPriceLabel;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffIdCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffNameCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffPassCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffSalaryCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffBonusCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffHireCol;
+        private System.Windows.Forms.Button showAllBtn;
+        private System.Windows.Forms.BindingSource merchantBindingSource;
+        private AutoCleanDatabaseDataSetTableAdapters.MerchantTableAdapter merchantTableAdapter;
+        private System.Windows.Forms.DataGridView merchantDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Button showAllEmployeeBtn;
     }
 }

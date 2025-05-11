@@ -66,11 +66,12 @@
   <ItemGroup>
     <Compile Include="AutoCleanDatabaseDataSet.cs">
       <DependentUpon>AutoCleanDatabaseDataSet.xsd</DependentUpon>
+      <SubType>code</SubType>
     </Compile>
     <Compile Include="AutoCleanDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>AutoCleanDatabaseDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="CustomerClass.cs" />
     <Compile Include="Employee Dashboard.cs">
@@ -97,6 +98,7 @@
     <Compile Include="managerLogin.Designer.cs">
       <DependentUpon>managerLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Merchant.cs" />
     <Compile Include="OrderPage.cs" />
     <Compile Include="selectRole.cs">
       <SubType>Form</SubType>
@@ -137,9 +139,9 @@
       <DependentUpon>AutoCleanDatabaseDataSet.xsd</DependentUpon>
     </None>
     <None Include="AutoCleanDatabaseDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AutoCleanDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="AutoCleanDatabaseDataSet.xss">
       <DependentUpon>AutoCleanDatabaseDataSet.xsd</DependentUpon>
