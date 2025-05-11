@@ -64,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoCleanDatabaseDataSet.cs">
+      <DependentUpon>AutoCleanDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AutoCleanDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,6 +92,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceClass.cs" />
     <Compile Include="StaffClass.cs" />
     <Compile Include="TryForm.cs">
       <SubType>Form</SubType>

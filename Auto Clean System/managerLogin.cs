@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Auto_Clean_System.AutoCleanDatabaseDataSet;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Auto_Clean_System
 {
@@ -29,7 +30,7 @@ namespace Auto_Clean_System
             SelectRole.Show();
             this.Hide();
         }
-
+        
         private long CheckManager() {
             if (!long.TryParse(txtUsername.Text, out long username)) {
                 return -1;
@@ -45,7 +46,13 @@ namespace Auto_Clean_System
                 // findUser returns integer the number of users found with these credentials
                 if (result != null && result != DBNull.Value) {
                     decimal users = Convert.ToDecimal(result);
+
+
                     if (users == 0) return -1;
+                    staffUser = new StaffClass();
+                    staffUser.staffID = username;
+                    staffUser.password = pass;
+                    staffUser.isManager = 1;
                     return username;
                 } else {
                     return -1;
@@ -54,7 +61,16 @@ namespace Auto_Clean_System
                 MessageBox.Show($"Error find user {ex.Message}");
                 return -1;
             }
+        }
 
+        string getUserName(long ID) {
+            object result = Program.StaffAdapter.FindStaffName(ID);
+
+            return Convert.ToString(result);
+        }
+        void setUserName(long ID) {
+            string name = getUserName(ID);
+            staffUser.name = name;
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -65,12 +81,12 @@ namespace Auto_Clean_System
                 MessageBox.Show("Invalid UserName Or Password");
                 return;
             }
-            var result = Program.AppDataSet.Staff.FindByStaffID(ID);
-            string name = result.NAME.ToString();
+            setUserName(ID);
+            Console.WriteLine(staffUser);
            //    Console.WriteLine(name);
             MessageBox.Show("Logged In Successfully!");
 
-            managerDashboard Manager = new managerDashboard();
+            managerDashboard Manager = new managerDashboard(staffUser);
 
             Manager.Show();
             this.Hide();
