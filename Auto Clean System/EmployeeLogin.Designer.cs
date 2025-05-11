@@ -146,7 +146,7 @@ namespace Auto_Clean_System {
             // 
             // picLogin
             // 
-            this.picLogin.Image = global::Auto_Clean_System.Properties.Resources.beautiful_car_washing_service__1_;
+            this.picLogin.Image = global::Auto_Clean_System.Properties.Resources.beautiful_Car_washing_service__1_;
             this.picLogin.Location = new System.Drawing.Point(0, 0);
             this.picLogin.Margin = new System.Windows.Forms.Padding(0);
             this.picLogin.MaximumSize = new System.Drawing.Size(400, 270);

@@ -73,9 +73,9 @@ namespace Auto_Clean_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap beautiful_car_washing_service {
+        internal static System.Drawing.Bitmap beautiful_Car_washing_service {
             get {
-                object obj = ResourceManager.GetObject("beautiful-car-washing-service", resourceCulture);
+                object obj = ResourceManager.GetObject("beautiful-Car-washing-service", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Auto_Clean_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap beautiful_car_washing_service__1_ {
+        internal static System.Drawing.Bitmap beautiful_Car_washing_service__1_ {
             get {
-                object obj = ResourceManager.GetObject("beautiful-car-washing-service (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("beautiful-Car-washing-service (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

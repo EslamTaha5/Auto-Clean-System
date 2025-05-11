@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Auto_Clean_System {
+    internal class OrderPage {
+        public string employeeName {  get; set; }
+        public string customerName { get; set; }
+        public long customerPhone { get; set; }
+        public string CarName {  get; set; }
+        public long employeeID { get; set; }
+        public int customerID {  get; set; }
+        public decimal cost { get; set; }
+        public decimal discount {  get; set; }
+        public decimal totalCost {  get; set; }
+        public string ServiceName { get; set; }
+        public void calculateTotal() {
+            totalCost = cost - cost * discount / 100;
+        }
+    }
+}

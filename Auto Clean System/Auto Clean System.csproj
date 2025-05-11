@@ -97,6 +97,7 @@
     <Compile Include="managerLogin.Designer.cs">
       <DependentUpon>managerLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderPage.cs" />
     <Compile Include="selectRole.cs">
       <SubType>Form</SubType>
     </Compile>

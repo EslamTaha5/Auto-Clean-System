@@ -24,7 +24,6 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(managerDashboard));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabProfile = new System.Windows.Forms.TabPage();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -46,14 +45,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.employeeDataGrid = new System.Windows.Forms.DataGridView();
-            this.staffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bonusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hireDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.autoCleanDatabaseDataSet = new Auto_Clean_System.AutoCleanDatabaseDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.employeeName = new System.Windows.Forms.TextBox();
@@ -80,11 +71,6 @@
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.customerDataGridView = new System.Windows.Forms.DataGridView();
-            this.customerIdRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerNameRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerPhoneRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerCarRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.customerName = new System.Windows.Forms.TextBox();
@@ -93,22 +79,34 @@
             this.customerId = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.carTextBox = new System.Windows.Forms.TextBox();
+            this.CarTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabCustomerService = new System.Windows.Forms.TabPage();
+            this.totalPriceLabel = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.addOrderBtn = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.dateCustomerService = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.txtDiscountOrder = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.txtPhoneOrder = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.txtCarOrder = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.txtCostOrder = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.combServiceName = new System.Windows.Forms.ComboBox();
+            this.combServiceNameOrder = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.txtCustomerNameOrder = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.txtEmployeeName = new System.Windows.Forms.TextBox();
+            this.txtEmployeeNameOrder = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabServices = new System.Windows.Forms.TabPage();
@@ -118,10 +116,6 @@
             this.btnSearchService = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
             this.servicesDataGridView = new System.Windows.Forms.DataGridView();
-            this.ServiceIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StandardCostCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.serviceName = new System.Windows.Forms.TextBox();
@@ -177,26 +171,28 @@
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bonusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hireDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoCleanDatabaseDataSet = new Auto_Clean_System.AutoCleanDatabaseDataSet();
+            this.customerIdRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerNameRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerPhoneRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerCarRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ServiceIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StandardCostCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicesTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.ServicesTableAdapter();
             this.staffTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.StaffTableAdapter();
             this.ordersTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.OrdersTableAdapter();
             this.tableAdapterManager = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.TableAdapterManager();
             this.customerTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.CustomerTableAdapter();
-            this.addOrderBtn = new System.Windows.Forms.Button();
-            this.panel35 = new System.Windows.Forms.Panel();
-            this.txtCar = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtCost = new System.Windows.Forms.TextBox();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel37 = new System.Windows.Forms.Panel();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.panel40 = new System.Windows.Forms.Panel();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.totalPriceLabel = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -208,8 +204,6 @@
             this.tabEmployees.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -221,7 +215,6 @@
             this.panel13.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -229,7 +222,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabCustomerService.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
+            this.panel40.SuspendLayout();
+            this.panel37.SuspendLayout();
+            this.panel35.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -237,7 +233,6 @@
             this.tabServices.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -259,10 +254,10 @@
             this.panel36.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKOrderStaffBindingSource)).BeginInit();
-            this.panel35.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel37.SuspendLayout();
-            this.panel40.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -298,6 +293,7 @@
             this.tabProfile.TabIndex = 0;
             this.tabProfile.Text = "Profile";
             this.tabProfile.UseVisualStyleBackColor = true;
+            this.tabProfile.Click += new System.EventHandler(this.tabProfile_Click);
             // 
             // picLogo
             // 
@@ -526,52 +522,6 @@
             this.employeeDataGrid.Name = "employeeDataGrid";
             this.employeeDataGrid.Size = new System.Drawing.Size(500, 291);
             this.employeeDataGrid.TabIndex = 0;
-            // 
-            // staffIDDataGridViewTextBoxColumn
-            // 
-            this.staffIDDataGridViewTextBoxColumn.DataPropertyName = "StaffID";
-            this.staffIDDataGridViewTextBoxColumn.HeaderText = "StaffID";
-            this.staffIDDataGridViewTextBoxColumn.Name = "staffIDDataGridViewTextBoxColumn";
-            // 
-            // nAMEDataGridViewTextBoxColumn
-            // 
-            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            // 
-            // salaryDataGridViewTextBoxColumn
-            // 
-            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
-            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
-            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
-            // 
-            // bonusDataGridViewTextBoxColumn
-            // 
-            this.bonusDataGridViewTextBoxColumn.DataPropertyName = "Bonus";
-            this.bonusDataGridViewTextBoxColumn.HeaderText = "Bonus";
-            this.bonusDataGridViewTextBoxColumn.Name = "bonusDataGridViewTextBoxColumn";
-            // 
-            // hireDateDataGridViewTextBoxColumn
-            // 
-            this.hireDateDataGridViewTextBoxColumn.DataPropertyName = "HireDate";
-            this.hireDateDataGridViewTextBoxColumn.HeaderText = "HireDate";
-            this.hireDateDataGridViewTextBoxColumn.Name = "hireDateDataGridViewTextBoxColumn";
-            // 
-            // staffBindingSource
-            // 
-            this.staffBindingSource.DataMember = "Staff";
-            this.staffBindingSource.DataSource = this.autoCleanDatabaseDataSet;
-            // 
-            // autoCleanDatabaseDataSet
-            // 
-            this.autoCleanDatabaseDataSet.DataSetName = "AutoCleanDatabaseDataSet";
-            this.autoCleanDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -862,36 +812,6 @@
             this.customerDataGridView.TabIndex = 0;
             this.customerDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGridView_CellContentClick);
             // 
-            // customerIdRow
-            // 
-            this.customerIdRow.DataPropertyName = "CustomerID";
-            this.customerIdRow.HeaderText = "CustomerID";
-            this.customerIdRow.Name = "customerIdRow";
-            this.customerIdRow.ReadOnly = true;
-            // 
-            // CustomerNameRow
-            // 
-            this.CustomerNameRow.DataPropertyName = "Name";
-            this.CustomerNameRow.HeaderText = "Name";
-            this.CustomerNameRow.Name = "CustomerNameRow";
-            // 
-            // customerPhoneRow
-            // 
-            this.customerPhoneRow.DataPropertyName = "PhoneNumber";
-            this.customerPhoneRow.HeaderText = "PhoneNumber";
-            this.customerPhoneRow.Name = "customerPhoneRow";
-            // 
-            // customerCarRow
-            // 
-            this.customerCarRow.DataPropertyName = "Car";
-            this.customerCarRow.HeaderText = "Car";
-            this.customerCarRow.Name = "customerCarRow";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.autoCleanDatabaseDataSet;
-            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.panel10);
@@ -964,23 +884,23 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.carTextBox);
+            this.panel12.Controls.Add(this.CarTextBox);
             this.panel12.Controls.Add(this.label8);
             this.panel12.Location = new System.Drawing.Point(0, 227);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(300, 50);
             this.panel12.TabIndex = 14;
             // 
-            // carTextBox
+            // CarTextBox
             // 
-            this.carTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.carTextBox.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carTextBox.Location = new System.Drawing.Point(88, 12);
-            this.carTextBox.Name = "carTextBox";
-            this.carTextBox.Size = new System.Drawing.Size(202, 20);
-            this.carTextBox.TabIndex = 8;
+            this.CarTextBox.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CarTextBox.Location = new System.Drawing.Point(88, 12);
+            this.CarTextBox.Name = "CarTextBox";
+            this.CarTextBox.Size = new System.Drawing.Size(202, 20);
+            this.CarTextBox.TabIndex = 8;
             // 
             // label8
             // 
@@ -1018,63 +938,192 @@
             this.tabCustomerService.Text = "Customer Service";
             this.tabCustomerService.UseVisualStyleBackColor = true;
             // 
+            // totalPriceLabel
+            // 
+            this.totalPriceLabel.AutoSize = true;
+            this.totalPriceLabel.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceLabel.Location = new System.Drawing.Point(310, 425);
+            this.totalPriceLabel.Name = "totalPriceLabel";
+            this.totalPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.totalPriceLabel.TabIndex = 43;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(269, 425);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(44, 16);
+            this.label30.TabIndex = 42;
+            this.label30.Text = "Total: ";
+            // 
+            // addOrderBtn
+            // 
+            this.addOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.addOrderBtn.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addOrderBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.addOrderBtn.Location = new System.Drawing.Point(509, 412);
+            this.addOrderBtn.MaximumSize = new System.Drawing.Size(120, 40);
+            this.addOrderBtn.MinimumSize = new System.Drawing.Size(120, 40);
+            this.addOrderBtn.Name = "addOrderBtn";
+            this.addOrderBtn.Size = new System.Drawing.Size(120, 40);
+            this.addOrderBtn.TabIndex = 41;
+            this.addOrderBtn.Text = "Add Order";
+            this.addOrderBtn.UseVisualStyleBackColor = false;
+            this.addOrderBtn.Click += new System.EventHandler(this.addOrderBtn_Click);
+            // 
             // panel14
             // 
             this.panel14.Controls.Add(this.panel40);
             this.panel14.Controls.Add(this.panel37);
             this.panel14.Controls.Add(this.panel35);
-            this.panel14.Controls.Add(this.panel15);
             this.panel14.Controls.Add(this.panel16);
             this.panel14.Controls.Add(this.panel17);
             this.panel14.Controls.Add(this.panel18);
             this.panel14.Controls.Add(this.panel19);
             this.panel14.Location = new System.Drawing.Point(269, 6);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(360, 454);
+            this.panel14.Size = new System.Drawing.Size(360, 391);
             this.panel14.TabIndex = 32;
             // 
-            // panel15
+            // panel40
             // 
-            this.panel15.Controls.Add(this.dateCustomerService);
-            this.panel15.Controls.Add(this.label10);
-            this.panel15.Location = new System.Drawing.Point(3, 395);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(350, 50);
-            this.panel15.TabIndex = 16;
+            this.panel40.Controls.Add(this.txtDiscountOrder);
+            this.panel40.Controls.Add(this.label29);
+            this.panel40.Location = new System.Drawing.Point(3, 339);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(350, 50);
+            this.panel40.TabIndex = 18;
             // 
-            // dateCustomerService
+            // txtDiscountOrder
             // 
-            this.dateCustomerService.Location = new System.Drawing.Point(117, 12);
-            this.dateCustomerService.Name = "dateCustomerService";
-            this.dateCustomerService.Size = new System.Drawing.Size(230, 20);
-            this.dateCustomerService.TabIndex = 32;
+            this.txtDiscountOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDiscountOrder.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscountOrder.Location = new System.Drawing.Point(116, 12);
+            this.txtDiscountOrder.Name = "txtDiscountOrder";
+            this.txtDiscountOrder.Size = new System.Drawing.Size(231, 20);
+            this.txtDiscountOrder.TabIndex = 8;
             // 
-            // label10
+            // label29
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(70, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 16);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Date:";
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(41, 16);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(66, 16);
+            this.label29.TabIndex = 7;
+            this.label29.Text = "Discount:";
+            // 
+            // panel37
+            // 
+            this.panel37.Controls.Add(this.txtPhoneOrder);
+            this.panel37.Controls.Add(this.label26);
+            this.panel37.Location = new System.Drawing.Point(3, 227);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(350, 50);
+            this.panel37.TabIndex = 17;
+            // 
+            // txtPhoneOrder
+            // 
+            this.txtPhoneOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhoneOrder.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneOrder.Location = new System.Drawing.Point(116, 12);
+            this.txtPhoneOrder.Name = "txtPhoneOrder";
+            this.txtPhoneOrder.Size = new System.Drawing.Size(231, 20);
+            this.txtPhoneOrder.TabIndex = 8;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(10, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 16);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Phone Number:";
+            // 
+            // panel35
+            // 
+            this.panel35.Controls.Add(this.txtCarOrder);
+            this.panel35.Controls.Add(this.label24);
+            this.panel35.Location = new System.Drawing.Point(3, 283);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(350, 50);
+            this.panel35.TabIndex = 17;
+            // 
+            // txtCarOrder
+            // 
+            this.txtCarOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCarOrder.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarOrder.Location = new System.Drawing.Point(116, 12);
+            this.txtCarOrder.Name = "txtCarOrder";
+            this.txtCarOrder.Size = new System.Drawing.Size(231, 20);
+            this.txtCarOrder.TabIndex = 8;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(41, 16);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(69, 16);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "Car Name:";
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.txtCostOrder);
+            this.panel16.Controls.Add(this.label11);
+            this.panel16.Location = new System.Drawing.Point(3, 171);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(350, 50);
+            this.panel16.TabIndex = 16;
+            // 
+            // txtCostOrder
+            // 
+            this.txtCostOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCostOrder.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCostOrder.Location = new System.Drawing.Point(116, 12);
+            this.txtCostOrder.Name = "txtCostOrder";
+            this.txtCostOrder.ReadOnly = true;
+            this.txtCostOrder.Size = new System.Drawing.Size(231, 20);
+            this.txtCostOrder.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(72, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 16);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Cost:";
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.combServiceName);
+            this.panel17.Controls.Add(this.combServiceNameOrder);
             this.panel17.Controls.Add(this.label12);
             this.panel17.Location = new System.Drawing.Point(3, 115);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(350, 50);
             this.panel17.TabIndex = 16;
             // 
-            // combServiceName
+            // combServiceNameOrder
             // 
-            this.combServiceName.FormattingEnabled = true;
-            this.combServiceName.Location = new System.Drawing.Point(117, 14);
-            this.combServiceName.Name = "combServiceName";
-            this.combServiceName.Size = new System.Drawing.Size(230, 21);
-            this.combServiceName.TabIndex = 32;
+            this.combServiceNameOrder.FormattingEnabled = true;
+            this.combServiceNameOrder.Location = new System.Drawing.Point(117, 14);
+            this.combServiceNameOrder.Name = "combServiceNameOrder";
+            this.combServiceNameOrder.Size = new System.Drawing.Size(230, 21);
+            this.combServiceNameOrder.TabIndex = 32;
+            this.combServiceNameOrder.SelectedIndexChanged += new System.EventHandler(this.combServiceNameOrder_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -1088,23 +1137,23 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.txtCustomerName);
+            this.panel18.Controls.Add(this.txtCustomerNameOrder);
             this.panel18.Controls.Add(this.label13);
             this.panel18.Location = new System.Drawing.Point(3, 59);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(350, 50);
             this.panel18.TabIndex = 15;
             // 
-            // txtCustomerName
+            // txtCustomerNameOrder
             // 
-            this.txtCustomerName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtCustomerNameOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCustomerName.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.Location = new System.Drawing.Point(116, 12);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(231, 20);
-            this.txtCustomerName.TabIndex = 8;
+            this.txtCustomerNameOrder.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerNameOrder.Location = new System.Drawing.Point(116, 12);
+            this.txtCustomerNameOrder.Name = "txtCustomerNameOrder";
+            this.txtCustomerNameOrder.Size = new System.Drawing.Size(231, 20);
+            this.txtCustomerNameOrder.TabIndex = 8;
             // 
             // label13
             // 
@@ -1118,23 +1167,24 @@
             // 
             // panel19
             // 
-            this.panel19.Controls.Add(this.txtEmployeeName);
+            this.panel19.Controls.Add(this.txtEmployeeNameOrder);
             this.panel19.Controls.Add(this.label15);
             this.panel19.Location = new System.Drawing.Point(3, 3);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(350, 50);
             this.panel19.TabIndex = 14;
             // 
-            // txtEmployeeName
+            // txtEmployeeNameOrder
             // 
-            this.txtEmployeeName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtEmployeeNameOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmployeeName.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeName.Location = new System.Drawing.Point(116, 12);
-            this.txtEmployeeName.Name = "txtEmployeeName";
-            this.txtEmployeeName.Size = new System.Drawing.Size(231, 20);
-            this.txtEmployeeName.TabIndex = 8;
+            this.txtEmployeeNameOrder.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeNameOrder.Location = new System.Drawing.Point(116, 12);
+            this.txtEmployeeNameOrder.Name = "txtEmployeeNameOrder";
+            this.txtEmployeeNameOrder.ReadOnly = true;
+            this.txtEmployeeNameOrder.Size = new System.Drawing.Size(231, 20);
+            this.txtEmployeeNameOrder.TabIndex = 8;
             // 
             // label15
             // 
@@ -1257,29 +1307,6 @@
             this.servicesDataGridView.Size = new System.Drawing.Size(380, 234);
             this.servicesDataGridView.TabIndex = 0;
             this.servicesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.servicesDataGridView_CellContentClick);
-            // 
-            // ServiceIDCol
-            // 
-            this.ServiceIDCol.DataPropertyName = "ServiceID";
-            this.ServiceIDCol.HeaderText = "ServiceID";
-            this.ServiceIDCol.Name = "ServiceIDCol";
-            // 
-            // ServiceNameCol
-            // 
-            this.ServiceNameCol.DataPropertyName = "ServiceName";
-            this.ServiceNameCol.HeaderText = "ServiceName";
-            this.ServiceNameCol.Name = "ServiceNameCol";
-            // 
-            // StandardCostCol
-            // 
-            this.StandardCostCol.DataPropertyName = "StandardCost";
-            this.StandardCostCol.HeaderText = "StandardCost";
-            this.StandardCostCol.Name = "StandardCostCol";
-            // 
-            // servicesBindingSource
-            // 
-            this.servicesBindingSource.DataMember = "Services";
-            this.servicesBindingSource.DataSource = this.autoCleanDatabaseDataSet;
             // 
             // panel21
             // 
@@ -1830,6 +1857,105 @@
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "PhoneNumber";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
             // 
+            // staffIDDataGridViewTextBoxColumn
+            // 
+            this.staffIDDataGridViewTextBoxColumn.DataPropertyName = "StaffID";
+            this.staffIDDataGridViewTextBoxColumn.HeaderText = "StaffID";
+            this.staffIDDataGridViewTextBoxColumn.Name = "staffIDDataGridViewTextBoxColumn";
+            // 
+            // nAMEDataGridViewTextBoxColumn
+            // 
+            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
+            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // salaryDataGridViewTextBoxColumn
+            // 
+            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
+            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
+            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
+            // 
+            // bonusDataGridViewTextBoxColumn
+            // 
+            this.bonusDataGridViewTextBoxColumn.DataPropertyName = "Bonus";
+            this.bonusDataGridViewTextBoxColumn.HeaderText = "Bonus";
+            this.bonusDataGridViewTextBoxColumn.Name = "bonusDataGridViewTextBoxColumn";
+            // 
+            // hireDateDataGridViewTextBoxColumn
+            // 
+            this.hireDateDataGridViewTextBoxColumn.DataPropertyName = "HireDate";
+            this.hireDateDataGridViewTextBoxColumn.HeaderText = "HireDate";
+            this.hireDateDataGridViewTextBoxColumn.Name = "hireDateDataGridViewTextBoxColumn";
+            // 
+            // staffBindingSource
+            // 
+            this.staffBindingSource.DataMember = "Staff";
+            this.staffBindingSource.DataSource = this.autoCleanDatabaseDataSet;
+            // 
+            // autoCleanDatabaseDataSet
+            // 
+            this.autoCleanDatabaseDataSet.DataSetName = "AutoCleanDatabaseDataSet";
+            this.autoCleanDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customerIdRow
+            // 
+            this.customerIdRow.DataPropertyName = "CustomerID";
+            this.customerIdRow.HeaderText = "CustomerID";
+            this.customerIdRow.Name = "customerIdRow";
+            this.customerIdRow.ReadOnly = true;
+            // 
+            // CustomerNameRow
+            // 
+            this.CustomerNameRow.DataPropertyName = "Name";
+            this.CustomerNameRow.HeaderText = "Name";
+            this.CustomerNameRow.Name = "CustomerNameRow";
+            // 
+            // customerPhoneRow
+            // 
+            this.customerPhoneRow.DataPropertyName = "PhoneNumber";
+            this.customerPhoneRow.HeaderText = "PhoneNumber";
+            this.customerPhoneRow.Name = "customerPhoneRow";
+            // 
+            // customerCarRow
+            // 
+            this.customerCarRow.DataPropertyName = "Car";
+            this.customerCarRow.HeaderText = "Car";
+            this.customerCarRow.Name = "customerCarRow";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.autoCleanDatabaseDataSet;
+            // 
+            // ServiceIDCol
+            // 
+            this.ServiceIDCol.DataPropertyName = "ServiceID";
+            this.ServiceIDCol.HeaderText = "ServiceID";
+            this.ServiceIDCol.Name = "ServiceIDCol";
+            // 
+            // ServiceNameCol
+            // 
+            this.ServiceNameCol.DataPropertyName = "ServiceName";
+            this.ServiceNameCol.HeaderText = "ServiceName";
+            this.ServiceNameCol.Name = "ServiceNameCol";
+            // 
+            // StandardCostCol
+            // 
+            this.StandardCostCol.DataPropertyName = "StandardCost";
+            this.StandardCostCol.HeaderText = "StandardCost";
+            this.StandardCostCol.Name = "StandardCostCol";
+            // 
+            // servicesBindingSource
+            // 
+            this.servicesBindingSource.DataMember = "Services";
+            this.servicesBindingSource.DataSource = this.autoCleanDatabaseDataSet;
+            // 
             // servicesTableAdapter
             // 
             this.servicesTableAdapter.ClearBeforeFill = true;
@@ -1857,159 +1983,6 @@
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
-            // addOrderBtn
-            // 
-            this.addOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
-            this.addOrderBtn.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addOrderBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.addOrderBtn.Location = new System.Drawing.Point(509, 469);
-            this.addOrderBtn.MaximumSize = new System.Drawing.Size(120, 40);
-            this.addOrderBtn.MinimumSize = new System.Drawing.Size(120, 40);
-            this.addOrderBtn.Name = "addOrderBtn";
-            this.addOrderBtn.Size = new System.Drawing.Size(120, 40);
-            this.addOrderBtn.TabIndex = 41;
-            this.addOrderBtn.Text = "Add Order";
-            this.addOrderBtn.UseVisualStyleBackColor = false;
-            // 
-            // panel35
-            // 
-            this.panel35.Controls.Add(this.txtCar);
-            this.panel35.Controls.Add(this.label24);
-            this.panel35.Location = new System.Drawing.Point(3, 283);
-            this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(350, 50);
-            this.panel35.TabIndex = 17;
-            // 
-            // txtCar
-            // 
-            this.txtCar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCar.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCar.Location = new System.Drawing.Point(116, 12);
-            this.txtCar.Name = "txtCar";
-            this.txtCar.Size = new System.Drawing.Size(231, 20);
-            this.txtCar.TabIndex = 8;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(41, 16);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(69, 16);
-            this.label24.TabIndex = 7;
-            this.label24.Text = "Car Name:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(72, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 16);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Cost:";
-            // 
-            // txtCost
-            // 
-            this.txtCost.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCost.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCost.Location = new System.Drawing.Point(116, 12);
-            this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(231, 20);
-            this.txtCost.TabIndex = 8;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.txtCost);
-            this.panel16.Controls.Add(this.label11);
-            this.panel16.Location = new System.Drawing.Point(3, 171);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(350, 50);
-            this.panel16.TabIndex = 16;
-            // 
-            // panel37
-            // 
-            this.panel37.Controls.Add(this.txtPhone);
-            this.panel37.Controls.Add(this.label26);
-            this.panel37.Location = new System.Drawing.Point(3, 227);
-            this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(350, 50);
-            this.panel37.TabIndex = 17;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhone.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(116, 12);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(231, 20);
-            this.txtPhone.TabIndex = 8;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(10, 16);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(100, 16);
-            this.label26.TabIndex = 7;
-            this.label26.Text = "Phone Number:";
-            // 
-            // panel40
-            // 
-            this.panel40.Controls.Add(this.txtDiscount);
-            this.panel40.Controls.Add(this.label29);
-            this.panel40.Location = new System.Drawing.Point(3, 339);
-            this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(350, 50);
-            this.panel40.TabIndex = 18;
-            // 
-            // txtDiscount
-            // 
-            this.txtDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDiscount.Font = new System.Drawing.Font("AwanZaman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(116, 12);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(231, 20);
-            this.txtDiscount.TabIndex = 8;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(41, 16);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(66, 16);
-            this.label29.TabIndex = 7;
-            this.label29.Text = "Discount:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(269, 482);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(44, 16);
-            this.label30.TabIndex = 42;
-            this.label30.Text = "Total: ";
-            // 
-            // totalPriceLabel
-            // 
-            this.totalPriceLabel.AutoSize = true;
-            this.totalPriceLabel.Font = new System.Drawing.Font("AwanZaman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceLabel.Location = new System.Drawing.Point(310, 482);
-            this.totalPriceLabel.Name = "totalPriceLabel";
-            this.totalPriceLabel.Size = new System.Drawing.Size(0, 16);
-            this.totalPriceLabel.TabIndex = 43;
-            // 
             // managerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2018,7 +1991,6 @@
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.tabControl);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1000, 700);
             this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "managerDashboard";
@@ -2038,8 +2010,6 @@
             this.tabEmployees.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -2057,7 +2027,6 @@
             this.panel13.PerformLayout();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
@@ -2069,8 +2038,14 @@
             this.tabCustomerService.ResumeLayout(false);
             this.tabCustomerService.PerformLayout();
             this.panel14.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
+            this.panel40.ResumeLayout(false);
+            this.panel40.PerformLayout();
+            this.panel37.ResumeLayout(false);
+            this.panel37.PerformLayout();
+            this.panel35.ResumeLayout(false);
+            this.panel35.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel18.ResumeLayout(false);
@@ -2081,7 +2056,6 @@
             this.tabServices.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             this.panel21.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
@@ -2115,14 +2089,10 @@
             this.panel36.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKOrderStaffBindingSource)).EndInit();
-            this.panel35.ResumeLayout(false);
-            this.panel35.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            this.panel37.ResumeLayout(false);
-            this.panel37.PerformLayout();
-            this.panel40.ResumeLayout(false);
-            this.panel40.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoCleanDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2199,17 +2169,14 @@
         private System.Windows.Forms.TextBox customerId;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.DateTimePicker dateCustomerService;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.ComboBox combServiceName;
+        private System.Windows.Forms.ComboBox combServiceNameOrder;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.TextBox txtCustomerNameOrder;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.TextBox txtEmployeeName;
+        private System.Windows.Forms.TextBox txtEmployeeNameOrder;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnDeleteService;
         private System.Windows.Forms.Button btnUpdateService;
@@ -2284,20 +2251,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn customerPhoneRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerCarRow;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox carTextBox;
+        private System.Windows.Forms.TextBox CarTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button addOrderBtn;
         private System.Windows.Forms.Panel panel37;
-        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtPhoneOrder;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Panel panel35;
-        private System.Windows.Forms.TextBox txtCar;
+        private System.Windows.Forms.TextBox txtCarOrder;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox txtCost;
+        private System.Windows.Forms.TextBox txtCostOrder;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.TextBox txtDiscountOrder;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label totalPriceLabel;
         private System.Windows.Forms.Label label30;

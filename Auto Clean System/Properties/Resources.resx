@@ -121,11 +121,11 @@
   <data name="Auto-Clean-Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Auto-Clean-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="beautiful-car-washing-service" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\beautiful-car-washing-service.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="beautiful-Car-washing-service" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-Car-washing-service.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="beautiful-car-washing-service (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\beautiful-car-washing-service (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="beautiful-Car-washing-service (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-Car-washing-service (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Person_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Person_.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
