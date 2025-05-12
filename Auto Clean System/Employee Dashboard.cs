@@ -66,6 +66,7 @@ namespace Auto_Clean_System {
             loadServicesIntoComboBox();
         }
 
+    
         private void loadServicesIntoComboBox() {
             try {
                 // Clear and reload the data source
@@ -78,10 +79,12 @@ namespace Auto_Clean_System {
                 combServiceNameOrder.ValueMember = "ServiceID";
                 combServiceNameOrder.SelectedIndex = -1;
 
+
             } catch (Exception ex) {
                 MessageBox.Show($"Error loading services: {ex.Message}");
             }
-        } 
+        }
+
         bool checkData() {
             Console.WriteLine($"Order Details:\n" +
                 $"Car: {txtCarOrder.Text}\n" +
@@ -104,6 +107,7 @@ namespace Auto_Clean_System {
             if (!decimal.TryParse(txtPhoneOrder.Text, out decimal tmpPhone)) return false;
             if (!decimal.TryParse(txtDiscountOrder.Text, out decimal tmpDiscount)) return false;
             if(tmpDiscount < 0 || tmpDiscount > 100) return false;
+            Console.WriteLine("Valid Order Data!");
             return true;
         }
 
@@ -113,17 +117,17 @@ namespace Auto_Clean_System {
                 return null;
             }
             OrderPage orderPage = new OrderPage();
-            Console.WriteLine(combServiceNameOrder.SelectedValue.ToString());
 
-            orderPage.ServiceName = combServiceNameOrder.SelectedValue.ToString();
+            orderPage.ServiceName = combServiceNameOrder.Text;
             orderPage.customerName = txtCustomerNameOrder.Text;
             orderPage.employeeName = txtEmployeeNameOrder.Text;
-            orderPage.CarName = txtPhoneOrder.Text;
-            orderPage.customerPhone = long.Parse(txtCarOrder.Text);
+            orderPage.CarName = txtCarOrder.Text;
+            orderPage.customerPhone = long.Parse(txtPhoneOrder.Text);
             orderPage.cost = decimal.Parse(txtCostOrder.Text);
             orderPage.discount = decimal.Parse(txtDiscountOrder.Text);
             orderPage.calculateTotal();
             orderPage.employeeID = employee.staffID;
+            Console.WriteLine("A7A2");
             return orderPage;
         }
 
@@ -141,13 +145,25 @@ namespace Auto_Clean_System {
                 this.customerTableAdapter.insertCustomer(order.customerName, order.customerPhone, order.CarName);
                 this.customerBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
-                this.customerTableAdapter.Fill(this.autoCleanDatabaseDataSet.Customer);
+                this.customerTableAdapter.showEmployeeCustomers(this.autoCleanDatabaseDataSet.Customer, employee.staffID);
 
             } catch (Exception ex) {
                 MessageBox.Show($"Error inserting customer: {ex.Message}");
             }
         }
 
+
+        void insertDetails(OrderPage order) {
+            try {
+
+                this.ordersDetailsTableAdapter.insertOrderDetail(order.orderID, order.ServiceName, order.cost);
+                this.ordersDetailsBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
+
+            } catch (Exception ex) {
+                MessageBox.Show($"Error In Order Detail Insert {ex.Message}");
+            }
+        }
 
         void insertOrderDetail(OrderPage order) {
             try {
@@ -169,6 +185,11 @@ namespace Auto_Clean_System {
             }
             Console.WriteLine($"Customer ID {order.customerID}");
             insertOrderDetail(order);
+
+            object result2 = this.ordersTableAdapter.lastOrderID();
+            order.orderID = Convert.ToInt32(result2);
+
+            insertDetails(order);
         }
 
         private void addOrderBtn_Click_1(object sender, EventArgs e) {
@@ -178,8 +199,9 @@ namespace Auto_Clean_System {
                 MessageBox.Show("Invalid Order Data!");
                 return;
             }
-
             insertOrder(order);
+            this.customerTableAdapter.showEmployeeCustomers(this.autoCleanDatabaseDataSet.Customer, employee.staffID);
+
             MessageBox.Show("Order Completed!");
         }
 
@@ -191,6 +213,8 @@ namespace Auto_Clean_System {
         }
 
         private void EmployeeDashboard_Load(object sender, EventArgs e) {
+            // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.OrdersDetails' table. You can move, or remove it, as needed.
+            this.ordersDetailsTableAdapter.Fill(this.autoCleanDatabaseDataSet.OrdersDetails);
             // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.Services' table. You can move, or remove it, as needed.
             this.servicesTableAdapter.Fill(this.autoCleanDatabaseDataSet.Services);
             // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.Orders' table. You can move, or remove it, as needed.
@@ -260,5 +284,49 @@ namespace Auto_Clean_System {
             }
         }
 
+        private void btnSearch_Click(object sender, EventArgs e) {
+            string name = customerName.Text;
+            this.customerTableAdapter.showEmployeeCustomersByName(autoCleanDatabaseDataSet.Customer, employee.staffID, name);
+        }
+
+        private void showAllCustomersBtn_Click(object sender, EventArgs e) {
+            this.customerTableAdapter.showEmployeeCustomers(autoCleanDatabaseDataSet.Customer, employee.staffID);
+        }
+        CustomerClass getCustomer() {
+            CustomerClass customer = new CustomerClass();
+
+            customer.customerName = customerName.Text;
+            customer.customerCar = CarTextBox.Text;
+            if (customer.customerName.Length == 0 || customer.customerCar.Length == 0) {
+                return null;
+            }
+
+            if (!int.TryParse(customerId.Text, out int tempID)) {
+                return null;
+            }
+            customer.customerID = tempID;
+            if (!long.TryParse(customerPhone.Text, out long tempPhone)) {
+                return null;
+            }
+            customer.phoneNumber = tempPhone;
+            return customer;
+        }
+        private void btnUpdate_Click(object sender, EventArgs e) {
+            CustomerClass customer = getCustomer();
+            if (customer == null) {
+                MessageBox.Show("Invalid Customer Data");
+                return;
+            }
+            DialogResult res = MessageBox.Show($"Update Customer with ID{customer.customerID}!", "Update Customer", MessageBoxButtons.YesNo);
+
+            if (res.Equals(DialogResult.Yes)) {
+                this.customerTableAdapter.updateCustomer(customer.customerName, customer.phoneNumber, customer.customerID);
+                this.customerBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
+                this.customerTableAdapter.showEmployeeCustomers(autoCleanDatabaseDataSet.Customer, employee.staffID);
+            }
+
+        }
+        
     }
 }

@@ -59,6 +59,8 @@ namespace Auto_Clean_System {
         }
 
         private void managerDashboard_Load(object sender, EventArgs e) {
+            // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.OrdersDetails' table. You can move, or remove it, as needed.
+            this.ordersDetailsTableAdapter.Fill(this.autoCleanDatabaseDataSet.OrdersDetails);
             // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.Merchant' table. You can move, or remove it, as needed.
             this.merchantTableAdapter.Fill(this.autoCleanDatabaseDataSet.Merchant);
             // TODO: This line of code loads data into the 'autoCleanDatabaseDataSet.Customer' table. You can move, or remove it, as needed.
@@ -69,7 +71,7 @@ namespace Auto_Clean_System {
             this.servicesTableAdapter.Fill(this.autoCleanDatabaseDataSet.Services);
             this.merchantTableAdapter.Fill(this.autoCleanDatabaseDataSet.Merchant);
             loadServicesIntoComboBox();
-
+            initReports();
             // TODO: This line of code loads data into the 'autoCleanDatabaseDataSe
 
         }
@@ -334,6 +336,7 @@ namespace Auto_Clean_System {
                 MessageBox.Show(e.Message);
             }
         }
+
         private void btnUpdateCustomer_Click(object sender, EventArgs e) {
             CustomerClass customer = getCustomer();
             if (customer == null) {
@@ -382,14 +385,19 @@ namespace Auto_Clean_System {
                 combServiceNameOrder.DisplayMember = "ServiceName";
                 combServiceNameOrder.ValueMember = "ServiceID";
                 combServiceNameOrder.SelectedIndex = -1;
+
                 cmbServices.DataSource = autoCleanDatabaseDataSet.Services;
                 cmbServices.DisplayMember = "ServiceName";
+                cmbServices.ValueMember = "ServiceName";
                 cmbServices.SelectedIndex = -1;
+
 
             } catch (Exception ex) {
                 MessageBox.Show($"Error loading services: {ex.Message}");
             }
         }
+
+       
         bool checkData() {
             Console.WriteLine($"Order Details:\n" +
                 $"Car: {txtCarOrder.Text}\n" +
@@ -411,6 +419,7 @@ namespace Auto_Clean_System {
             Console.WriteLine("All Values Are Set");
             if (!decimal.TryParse(txtPhoneOrder.Text, out decimal tmpPhone)) return false;
             if (!decimal.TryParse(txtDiscountOrder.Text, out decimal tmpDiscount)) return false;
+            if (tmpDiscount < 0 || tmpDiscount > 100) return false;
             return true;
         }
 
@@ -420,9 +429,9 @@ namespace Auto_Clean_System {
                 return null;
             }
             OrderPage orderPage = new OrderPage();
-            Console.WriteLine(combServiceNameOrder.SelectedValue.ToString());
 
-            orderPage.ServiceName = combServiceNameOrder.SelectedValue.ToString();
+            orderPage.ServiceName = combServiceNameOrder.Text;
+
             orderPage.customerName = txtCustomerNameOrder.Text;
             orderPage.employeeName = txtEmployeeNameOrder.Text;
             orderPage.CarName = txtCarOrder.Text;
@@ -458,6 +467,7 @@ namespace Auto_Clean_System {
 
         void insertOrderDetail(OrderPage order) {
             try {
+
                 this.ordersTableAdapter.insertOrder(order.customerID, order.employeeID, order.CarName, (int)order.cost, order.discount, (int)order.totalCost);
                 this.fKOrderStaffBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
@@ -467,15 +477,33 @@ namespace Auto_Clean_System {
             }
         }
 
-        void insertOrder(OrderPage order) {
-            insertCustomer(order);
-            object result = this.customerTableAdapter.FindCustomerID(order.customerName, order.customerPhone, order.CarName);
-            if (result != null && result != DBNull.Value) {
-                order.customerID = Convert.ToInt32(result);
+        void insertDetails(OrderPage order) {
+            try {
+
+                this.ordersDetailsTableAdapter.insertOrderDetail(order.orderID,order.ServiceName, order.cost);
+                this.ordersDetailsBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(autoCleanDatabaseDataSet);
+
+            } catch (Exception ex) {
+                MessageBox.Show($"Error In Order Detail Insert {ex.Message}");
             }
-            Console.WriteLine($"Customer ID {order.customerID}");
-            insertOrderDetail(order);
         }
+        void initReports() {
+
+            try {
+
+
+                // Bind the ComboBox
+                
+                cmbServices.SelectedIndex = -1;
+                updateRevenue(-1, "");
+
+            } catch (Exception ex) {
+                MessageBox.Show($"Error loading services: {ex.Message}");
+            }
+
+        }
+        
         private void addOrderBtn_Click(object sender, EventArgs e) {
             OrderPage order = getOrderData();
 
@@ -485,6 +513,7 @@ namespace Auto_Clean_System {
             }
             
             insertOrder(order);
+            initReports();
             MessageBox.Show("Order Completed!");
 
         }
@@ -583,7 +612,90 @@ namespace Auto_Clean_System {
 
         }
 
+        private void cmbServices_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cmbServices.SelectedIndex == -1) {
+                updateRevenue(-1, "");
+            } else {
+                updateRevenue(1, cmbServices.Text.ToString());
+            }
 
+
+        }
+
+        void insertOrder(OrderPage order) {
+            insertCustomer(order);
+            object result = this.customerTableAdapter.FindCustomerID(order.customerName, order.customerPhone, order.CarName);
+            if (result != null && result != DBNull.Value) {
+                order.customerID = Convert.ToInt32(result);
+            }
+            Console.WriteLine($"Customer ID {order.customerID}");
+            insertOrderDetail(order);
+            object result2 = this.ordersTableAdapter.lastOrderID();
+            order.orderID = Convert.ToInt32(result2);
+
+            insertDetails(order);
+
+        }
+
+        void updateRevenue(int idx, string value) {
+            long total = 0;
+            DateTime dateFrom = reportFrom.Value;
+            DateTime dateTo = reportTo.Value;
+            if (idx == -1) {
+                object result = this.ordersDetailsTableAdapter.getTotalRevenue(dateFrom.Date, dateTo.Date);
+                if (result != null || result != DBNull.Value) total = Convert.ToInt64(result);
+            } else {
+                object result = this.ordersDetailsTableAdapter.getTotalRevenueService(dateFrom, dateTo, value);
+                if(result != null ||result != DBNull.Value) total = Convert.ToInt64(result);
+            }
+            txtRevenue.Text = total.ToString();
+            //updateChart();
+
+        }
+
+        void updateChart() {
+            DateTime dateFrom = reportFrom.Value;
+            DateTime dateTo = reportTo.Value;
+
+            object Result = this.ordersDetailsTableAdapter.serviceGroupsDetails(autoCleanDatabaseDataSet.OrdersDetails,dateFrom, dateTo);
+            Console.WriteLine($"RESULT {Result}");
+            if (Result == null || Result != DBNull.Value) return;
+            var result = this.ordersDetailsTableAdapter.GetDataBy3(dateFrom, dateTo);
+            
+            // Print column headers
+            Console.WriteLine("Service Name\tTotal");
+            Console.WriteLine("--------------------------");
+
+            // Print rows
+            foreach (DataRow row in result.Rows) {
+                string serviceName = row["ServiceName"].ToString();
+                decimal total = Convert.ToDecimal(row["Total"]);
+                Console.WriteLine($"{serviceName.PadRight(15)}\t{total:C}");
+            }
+
+        }
+
+        private void reportFrom_ValueChanged(object sender, EventArgs e) {
+            initReports();
+        }
+
+        private void reportTo_ValueChanged(object sender, EventArgs e) {
+            initReports();
+        }
+
+        private void chart1_Click(object sender, EventArgs e) {
+
+        }
+
+        private void showAllReportsBtn_Click(object sender, EventArgs e) {
+            updateRevenue(-1, "");
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e) {
+            RoleSelection SelectRole = new RoleSelection();
+            SelectRole.Show();
+            this.Hide();
+        }
 
 
         // Merchant Panel

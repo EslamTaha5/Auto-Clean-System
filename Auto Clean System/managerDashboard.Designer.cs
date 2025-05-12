@@ -39,6 +39,7 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.picManager = new System.Windows.Forms.PictureBox();
             this.tabEmployees = new System.Windows.Forms.TabPage();
+            this.showAllEmployeeBtn = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -176,6 +177,7 @@
             this.tabReports = new System.Windows.Forms.TabPage();
             this.panel32 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
+            this.showAllReportsBtn = new System.Windows.Forms.Button();
             this.panel39 = new System.Windows.Forms.Panel();
             this.reportTo = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
@@ -200,7 +202,8 @@
             this.tableAdapterManager = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.TableAdapterManager();
             this.customerTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.CustomerTableAdapter();
             this.merchantTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.MerchantTableAdapter();
-            this.showAllEmployeeBtn = new System.Windows.Forms.Button();
+            this.ordersDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersDetailsTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.OrdersDetailsTableAdapter();
             this.tabControl.SuspendLayout();
             this.tabProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -269,6 +272,7 @@
             this.panel36.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKOrderStaffBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -450,6 +454,21 @@
             this.tabEmployees.TabIndex = 1;
             this.tabEmployees.Text = "Employees";
             this.tabEmployees.UseVisualStyleBackColor = true;
+            // 
+            // showAllEmployeeBtn
+            // 
+            this.showAllEmployeeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.showAllEmployeeBtn.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAllEmployeeBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.showAllEmployeeBtn.Location = new System.Drawing.Point(614, 352);
+            this.showAllEmployeeBtn.MaximumSize = new System.Drawing.Size(120, 40);
+            this.showAllEmployeeBtn.MinimumSize = new System.Drawing.Size(120, 40);
+            this.showAllEmployeeBtn.Name = "showAllEmployeeBtn";
+            this.showAllEmployeeBtn.Size = new System.Drawing.Size(120, 40);
+            this.showAllEmployeeBtn.TabIndex = 24;
+            this.showAllEmployeeBtn.Text = "Show All";
+            this.showAllEmployeeBtn.UseVisualStyleBackColor = false;
+            this.showAllEmployeeBtn.Click += new System.EventHandler(this.showAllEmployeeBtn_Click);
             // 
             // btnUpdate
             // 
@@ -1001,6 +1020,7 @@
             // 
             // tabCustomerService
             // 
+            this.tabCustomerService.AutoScroll = true;
             this.tabCustomerService.Controls.Add(this.totalPriceLabel);
             this.tabCustomerService.Controls.Add(this.label30);
             this.tabCustomerService.Controls.Add(this.addOrderBtn);
@@ -1849,6 +1869,7 @@
             // 
             // panel33
             // 
+            this.panel33.Controls.Add(this.showAllReportsBtn);
             this.panel33.Controls.Add(this.panel39);
             this.panel33.Controls.Add(this.panel38);
             this.panel33.Controls.Add(this.panel34);
@@ -1857,6 +1878,21 @@
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(492, 173);
             this.panel33.TabIndex = 36;
+            // 
+            // showAllReportsBtn
+            // 
+            this.showAllReportsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.showAllReportsBtn.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAllReportsBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.showAllReportsBtn.Location = new System.Drawing.Point(342, 91);
+            this.showAllReportsBtn.MaximumSize = new System.Drawing.Size(120, 40);
+            this.showAllReportsBtn.MinimumSize = new System.Drawing.Size(120, 40);
+            this.showAllReportsBtn.Name = "showAllReportsBtn";
+            this.showAllReportsBtn.Size = new System.Drawing.Size(120, 40);
+            this.showAllReportsBtn.TabIndex = 35;
+            this.showAllReportsBtn.Text = "Show All";
+            this.showAllReportsBtn.UseVisualStyleBackColor = false;
+            this.showAllReportsBtn.Click += new System.EventHandler(this.showAllReportsBtn_Click);
             // 
             // panel39
             // 
@@ -1873,6 +1909,7 @@
             this.reportTo.Name = "reportTo";
             this.reportTo.Size = new System.Drawing.Size(184, 20);
             this.reportTo.TabIndex = 32;
+            this.reportTo.ValueChanged += new System.EventHandler(this.reportTo_ValueChanged);
             // 
             // label28
             // 
@@ -1899,6 +1936,7 @@
             this.reportFrom.Name = "reportFrom";
             this.reportFrom.Size = new System.Drawing.Size(184, 20);
             this.reportFrom.TabIndex = 32;
+            this.reportFrom.ValueChanged += new System.EventHandler(this.reportFrom_ValueChanged);
             // 
             // label27
             // 
@@ -1914,7 +1952,7 @@
             // 
             this.panel34.Controls.Add(this.cmbServices);
             this.panel34.Controls.Add(this.label23);
-            this.panel34.Location = new System.Drawing.Point(92, 59);
+            this.panel34.Location = new System.Drawing.Point(3, 59);
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(300, 50);
             this.panel34.TabIndex = 14;
@@ -1926,6 +1964,7 @@
             this.cmbServices.Name = "cmbServices";
             this.cmbServices.Size = new System.Drawing.Size(200, 21);
             this.cmbServices.TabIndex = 34;
+            this.cmbServices.SelectedIndexChanged += new System.EventHandler(this.cmbServices_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -1941,7 +1980,7 @@
             // 
             this.panel36.Controls.Add(this.txtRevenue);
             this.panel36.Controls.Add(this.label25);
-            this.panel36.Location = new System.Drawing.Point(92, 115);
+            this.panel36.Location = new System.Drawing.Point(3, 115);
             this.panel36.Name = "panel36";
             this.panel36.Size = new System.Drawing.Size(300, 50);
             this.panel36.TabIndex = 14;
@@ -1991,6 +2030,7 @@
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // fKOrderStaffBindingSource
             // 
@@ -2047,20 +2087,14 @@
             // 
             this.merchantTableAdapter.ClearBeforeFill = true;
             // 
-            // showAllEmployeeBtn
+            // ordersDetailsBindingSource
             // 
-            this.showAllEmployeeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
-            this.showAllEmployeeBtn.Font = new System.Drawing.Font("AwanZaman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showAllEmployeeBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.showAllEmployeeBtn.Location = new System.Drawing.Point(614, 352);
-            this.showAllEmployeeBtn.MaximumSize = new System.Drawing.Size(120, 40);
-            this.showAllEmployeeBtn.MinimumSize = new System.Drawing.Size(120, 40);
-            this.showAllEmployeeBtn.Name = "showAllEmployeeBtn";
-            this.showAllEmployeeBtn.Size = new System.Drawing.Size(120, 40);
-            this.showAllEmployeeBtn.TabIndex = 24;
-            this.showAllEmployeeBtn.Text = "Show All";
-            this.showAllEmployeeBtn.UseVisualStyleBackColor = false;
-            this.showAllEmployeeBtn.Click += new System.EventHandler(this.showAllEmployeeBtn_Click);
+            this.ordersDetailsBindingSource.DataMember = "OrdersDetails";
+            this.ordersDetailsBindingSource.DataSource = this.autoCleanDatabaseDataSet;
+            // 
+            // ordersDetailsTableAdapter
+            // 
+            this.ordersDetailsTableAdapter.ClearBeforeFill = true;
             // 
             // managerDashboard
             // 
@@ -2175,6 +2209,7 @@
             this.panel36.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKOrderStaffBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2358,5 +2393,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button showAllEmployeeBtn;
+        private System.Windows.Forms.BindingSource ordersDetailsBindingSource;
+        private AutoCleanDatabaseDataSetTableAdapters.OrdersDetailsTableAdapter ordersDetailsTableAdapter;
+        private System.Windows.Forms.Button showAllReportsBtn;
     }
 }

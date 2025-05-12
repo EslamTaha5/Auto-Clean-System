@@ -16,6 +16,7 @@ namespace Auto_Clean_System {
         public decimal discount {  get; set; }
         public decimal totalCost {  get; set; }
         public string ServiceName { get; set; }
+        public int orderID { get; set; }
         public void calculateTotal() {
             totalCost = cost - cost * discount / 100;
         }

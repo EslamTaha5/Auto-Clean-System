@@ -46,9 +46,8 @@ namespace Auto_Clean_System {
             this.label14 = new System.Windows.Forms.Label();
             this.picManager = new System.Windows.Forms.PictureBox();
             this.CustomerTap = new System.Windows.Forms.TabPage();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
+            this.showAllCustomersBtn = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.customer_panel = new System.Windows.Forms.Panel();
             this.customerDataGridView = new System.Windows.Forms.DataGridView();
@@ -97,6 +96,8 @@ namespace Auto_Clean_System {
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicesTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.ServicesTableAdapter();
+            this.ordersDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersDetailsTableAdapter = new Auto_Clean_System.AutoCleanDatabaseDataSetTableAdapters.OrdersDetailsTableAdapter();
             this.Employee_tab.SuspendLayout();
             this.EmployeeTap.SuspendLayout();
             this.Empdash_EmployeeName.SuspendLayout();
@@ -120,6 +121,7 @@ namespace Auto_Clean_System {
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -345,9 +347,8 @@ namespace Auto_Clean_System {
             // 
             this.CustomerTap.AutoScroll = true;
             this.CustomerTap.BackColor = System.Drawing.Color.White;
-            this.CustomerTap.Controls.Add(this.btnDelete);
             this.CustomerTap.Controls.Add(this.btnUpdate);
-            this.CustomerTap.Controls.Add(this.btnCreate);
+            this.CustomerTap.Controls.Add(this.showAllCustomersBtn);
             this.CustomerTap.Controls.Add(this.btnSearch);
             this.CustomerTap.Controls.Add(this.customer_panel);
             this.CustomerTap.Controls.Add(this.panel1);
@@ -359,26 +360,12 @@ namespace Auto_Clean_System {
             this.CustomerTap.TabIndex = 1;
             this.CustomerTap.Text = " ";
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(587, 375);
-            this.btnDelete.MaximumSize = new System.Drawing.Size(120, 40);
-            this.btnDelete.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(120, 40);
-            this.btnDelete.TabIndex = 51;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Location = new System.Drawing.Point(423, 375);
+            this.btnUpdate.Location = new System.Drawing.Point(547, 364);
             this.btnUpdate.MaximumSize = new System.Drawing.Size(120, 40);
             this.btnUpdate.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnUpdate.Name = "btnUpdate";
@@ -386,27 +373,29 @@ namespace Auto_Clean_System {
             this.btnUpdate.TabIndex = 50;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnCreate
+            // showAllCustomersBtn
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCreate.Location = new System.Drawing.Point(259, 375);
-            this.btnCreate.MaximumSize = new System.Drawing.Size(120, 40);
-            this.btnCreate.MinimumSize = new System.Drawing.Size(120, 40);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(120, 40);
-            this.btnCreate.TabIndex = 49;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = false;
+            this.showAllCustomersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
+            this.showAllCustomersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAllCustomersBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.showAllCustomersBtn.Location = new System.Drawing.Point(383, 364);
+            this.showAllCustomersBtn.MaximumSize = new System.Drawing.Size(120, 40);
+            this.showAllCustomersBtn.MinimumSize = new System.Drawing.Size(120, 40);
+            this.showAllCustomersBtn.Name = "showAllCustomersBtn";
+            this.showAllCustomersBtn.Size = new System.Drawing.Size(120, 40);
+            this.showAllCustomersBtn.TabIndex = 49;
+            this.showAllCustomersBtn.Text = "Show All";
+            this.showAllCustomersBtn.UseVisualStyleBackColor = false;
+            this.showAllCustomersBtn.Click += new System.EventHandler(this.showAllCustomersBtn_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(146)))), ((int)(((byte)(218)))));
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSearch.Location = new System.Drawing.Point(95, 375);
+            this.btnSearch.Location = new System.Drawing.Point(219, 364);
             this.btnSearch.MaximumSize = new System.Drawing.Size(120, 40);
             this.btnSearch.MinimumSize = new System.Drawing.Size(120, 40);
             this.btnSearch.Name = "btnSearch";
@@ -414,6 +403,7 @@ namespace Auto_Clean_System {
             this.btnSearch.TabIndex = 48;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // customer_panel
             // 
@@ -640,7 +630,7 @@ namespace Auto_Clean_System {
             this.panel7.Controls.Add(this.label5);
             this.panel7.Location = new System.Drawing.Point(3, 6);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(817, 480);
+            this.panel7.Size = new System.Drawing.Size(918, 522);
             this.panel7.TabIndex = 1;
             // 
             // addOrderBtn
@@ -715,7 +705,7 @@ namespace Auto_Clean_System {
             this.txtCarOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarOrder.Location = new System.Drawing.Point(177, 148);
             this.txtCarOrder.Name = "txtCarOrder";
-            this.txtCarOrder.Size = new System.Drawing.Size(184, 29);
+            this.txtCarOrder.Size = new System.Drawing.Size(285, 29);
             this.txtCarOrder.TabIndex = 16;
             // 
             // txtCostOrder
@@ -753,7 +743,7 @@ namespace Auto_Clean_System {
             this.txtPhoneOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneOrder.Location = new System.Drawing.Point(607, 148);
             this.txtPhoneOrder.Name = "txtPhoneOrder";
-            this.txtPhoneOrder.Size = new System.Drawing.Size(183, 29);
+            this.txtPhoneOrder.Size = new System.Drawing.Size(284, 29);
             this.txtPhoneOrder.TabIndex = 17;
             // 
             // txtEmployeeNameOrder
@@ -773,7 +763,7 @@ namespace Auto_Clean_System {
             this.txtDiscountOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscountOrder.Location = new System.Drawing.Point(177, 208);
             this.txtDiscountOrder.Name = "txtDiscountOrder";
-            this.txtDiscountOrder.Size = new System.Drawing.Size(184, 29);
+            this.txtDiscountOrder.Size = new System.Drawing.Size(285, 29);
             this.txtDiscountOrder.TabIndex = 18;
             this.txtDiscountOrder.Text = "0.0";
             this.txtDiscountOrder.TextChanged += new System.EventHandler(this.txtDiscountOrder_TextChanged);
@@ -859,6 +849,15 @@ namespace Auto_Clean_System {
             // 
             this.servicesTableAdapter.ClearBeforeFill = true;
             // 
+            // ordersDetailsBindingSource
+            // 
+            this.ordersDetailsBindingSource.DataMember = "OrdersDetails";
+            this.ordersDetailsBindingSource.DataSource = this.autoCleanDatabaseDataSet;
+            // 
+            // ordersDetailsTableAdapter
+            // 
+            this.ordersDetailsTableAdapter.ClearBeforeFill = true;
+            // 
             // EmployeeDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -906,6 +905,7 @@ namespace Auto_Clean_System {
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -932,9 +932,8 @@ namespace Auto_Clean_System {
         private System.Windows.Forms.TextBox employeeSalaryTxt;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox picManager;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button showAllCustomersBtn;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel customer_panel;
         private System.Windows.Forms.Panel panel1;
@@ -983,5 +982,7 @@ namespace Auto_Clean_System {
         private System.Windows.Forms.DataGridViewTextBoxColumn customerCarRow;
         private System.Windows.Forms.BindingSource servicesBindingSource;
         private AutoCleanDatabaseDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter;
+        private System.Windows.Forms.BindingSource ordersDetailsBindingSource;
+        private AutoCleanDatabaseDataSetTableAdapters.OrdersDetailsTableAdapter ordersDetailsTableAdapter;
     }
 }
